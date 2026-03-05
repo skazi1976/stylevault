@@ -3,95 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleVault - אוסף מוצרי יוקרה</title>
-    <!-- קישור לקובץ ה-CSS החיצוני -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- הוספת פונטים למראה יוקרתי -->
+    <title>מצעי יוקרה - StyleVault</title>
+    <!-- קישור לקובץ העיצוב - הנתיב עולה תיקייה אחת למעלה ל-CSS -->
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
+            <!-- לוגו שמוביל לדף הבית בשורש האתר -->
+            <a href="../index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
             <ul class="nav-links">
-                <li><a href="products/chandeliers.html">נברשות</a></li>
-                <li><a href="products/jewelry.html">תכשיטים</a></li>
-                <li><a href="products/handbags.html">תיקים</a></li>
-                <li><a href="products/watches.html">שעונים</a></li>
-                <li><a href="products/bedding.html">מצעים</a></li>
-                <li><a href="products/wall-art.html">אמנות קיר</a></li>
+                <!-- קישורים לשאר דפי המוצרים באותה התיקייה -->
+                <li><a href="chandeliers.html">נברשות</a></li>
+                <li><a href="jewelry.html">תכשיטים</a></li>
+                <li><a href="handbags.html">תיקים</a></li>
+                <li><a href="watches.html">שעונים</a></li>
+                <li><a href="bedding.html">מצעים</a></li>
+                <li><a href="wall-art.html">אמנות קיר</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <div class="page-header">
         <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle">הבחירה של המומחים</p>
-                <h1>גלו את אוסף היוקרה שלנו</h1>
-                <p class="hero-text">ריכזנו עבורכם את המוצרים המובחרים ביותר מכל העולם, מעוצבים בטוב טעם ומשדרים יוקרה ללא פשרות.</p>
-                <div class="hero-cta">
-                    <a href="#categories" class="btn btn-primary">לצפייה בקולקציה</a>
+            <h1>מצעי יוקרה</h1>
+            <p>הקולקציה הנבחרת שלנו לחדר השינה</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-breadcrumb">
+            <a href="../index.html">בית</a> / <span>מצעים</span>
+        </div>
+
+        <section class="products-section">
+            <div class="product-grid">
+                <!-- כרטיס מוצר 1 -->
+                <div class="product-card">
+                    <span class="product-badge new">חדש</span>
+                    <div class="product-image">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">טקסטיל יוקרה</span>
+                        <h3>סט מצעים מלכותי</h3>
+                        <p class="product-desc">בד סאטן מובחר בצפיפות גבוהה למגע משי מושלם.</p>
+                        <div class="product-price">
+                            <span class="price-current">$83.30</span>
+                        </div>
+                        <a href="https://s.click.aliexpress.com/e/_c3NYX75N" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                    </div>
+                </div>
+
+                <!-- כרטיס מוצר 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hc6e0ddcb68ba4afcbdf4812cf1edde0bO.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">טקסטיל יוקרה</span>
+                        <h3>סט מצעים מודרני</h3>
+                        <p class="product-desc">עיצוב נקי ויוקרתי המתאים לכל חדר שינה מודרני.</p>
+                        <div class="product-price">
+                            <span class="price-current">$43.73</span>
+                        </div>
+                        <a href="https://s.click.aliexpress.com/e/_c4qmKVKr" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <section id="categories" class="categories">
-        <div class="container">
-            <h2 class="section-title">הקטגוריות שלנו</h2>
-            <p class="section-subtitle">בחרו את הסטייל שלכם</p>
-            
-            <div class="category-grid">
-                <!-- דוגמה לקטגוריה אחת - יש לשכפל לשאר -->
-                <a href="products/bedding.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg');"></div>
-                    <div class="category-info">
-                        <h3>מצעי יוקרה</h3>
-                        <p>טקסטיל מובחר לשינה מושלמת</p>
-                        <span class="category-link">צפה במוצרים ←</span>
-                    </div>
-                </a>
-                
-                <a href="products/chandeliers.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg');"></div>
-                    <div class="category-info">
-                        <h3>נברשות</h3>
-                        <p>תאורה שמעצבת את החלל</p>
-                        <span class="category-link">צפה במוצרים ←</span>
-                    </div>
-                </a>
-
-                <a href="products/watches.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg');"></div>
-                    <div class="category-info">
-                        <h3>שעוני יוקרה</h3>
-                        <p>דיוק וסטייל על פרק היד</p>
-                        <span class="category-link">צפה במוצרים ←</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>StyleVault</h4>
-                    <p>היעד שלכם למוצרי יוקרה נבחרים.</p>
-                </div>
-                <div>
-                    <h4>קישורים מהירים</h4>
-                    <ul>
-                        <li><a href="index.html">בית</a></li>
-                        <li><a href="products/bedding.html">מצעים</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
-                <p class="affiliate-disclosure">גילוי נאות: האתר מכיל קישורי שותפים (Affiliate), אנו עשויים להרוויח עמלה על רכישות ללא עלות נוספת עבורכם.</p>
             </div>
         </div>
     </footer>
