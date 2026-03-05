@@ -1,249 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleVault - Curated Luxury Finds</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 2px solid #e94560;
-        }
-
-        header h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            color: #e94560;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        header p {
-            font-size: 1.3em;
-            color: #b0b0b0;
-            font-style: italic;
-        }
-
-        .hero-section {
-            background: linear-gradient(180deg, rgba(25, 45, 85, 0.2) 0%, rgba(10, 10, 10, 1) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #e94560;
-        }
-
-        .hero-section h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #e94560;
-        }
-
-        .hero-section p {
-            font-size: 1.1em;
-            color: #b0b0b0;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .categories-section {
-            padding: 60px 20px;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .category-card {
-            background-color: #16213e;
-            border: 1px solid #e94560;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-            border-color: #ff6b7a;
-        }
-
-        .category-card-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background-color: #0a0a0a;
-        }
-
-        .category-card-content {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .category-card-content h3 {
-            font-size: 1.8em;
-            color: #e94560;
-            margin-bottom: 10px;
-        }
-
-        .category-card-content p {
-            color: #b0b0b0;
-            font-size: 0.95em;
-        }
-
-        .category-card-content::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #e94560;
-            margin: 15px auto 0;
-        }
-
-        footer {
-            background-color: #16213e;
-            border-top: 1px solid #e94560;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        footer p {
-            color: #b0b0b0;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .disclosure {
-            color: #888888;
-            font-size: 0.85em;
-            margin-top: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-section h2 {
-                font-size: 1.5em;
-            }
-        }
-    </style>
+    <title>StyleVault - אוסף מוצרי יוקרה</title>
+    <!-- קישור לקובץ ה-CSS החיצוני -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- הוספת פונטים למראה יוקרתי -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-        <a href="index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
-        <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="products/chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
-            <a href="products/jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
-            <a href="products/handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
-            <a href="products/watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
-            <a href="products/bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
-            <a href="products/wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
+            <ul class="nav-links">
+                <li><a href="products/chandeliers.html">נברשות</a></li>
+                <li><a href="products/jewelry.html">תכשיטים</a></li>
+                <li><a href="products/handbags.html">תיקים</a></li>
+                <li><a href="products/watches.html">שעונים</a></li>
+                <li><a href="products/bedding.html">מצעים</a></li>
+                <li><a href="products/wall-art.html">אמנות קיר</a></li>
+            </ul>
         </div>
     </nav>
-    <header>
-        <h1>StyleVault</h1>
-        <p>Curated Luxury Finds</p>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">הבחירה של המומחים</p>
+                <h1>גלו את אוסף היוקרה שלנו</h1>
+                <p class="hero-text">ריכזנו עבורכם את המוצרים המובחרים ביותר מכל העולם, מעוצבים בטוב טעם ומשדרים יוקרה ללא פשרות.</p>
+                <div class="hero-cta">
+                    <a href="#categories" class="btn btn-primary">לצפייה בקולקציה</a>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="hero-section">
-        <h2>Discover Exquisite Collections</h2>
-        <p>Explore our carefully curated selection of luxury items across chandeliers, jewelry, handbags, watches, bedding, and wall art. Each product is selected to bring sophistication and elegance to your lifestyle.</p>
-    </div>
-
-    <div class="container">
-        <div class="categories-section">
-            <div class="categories-grid">
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2 class="section-title">הקטגוריות שלנו</h2>
+            <p class="section-subtitle">בחרו את הסטייל שלכם</p>
+            
+            <div class="category-grid">
+                <!-- דוגמה לקטגוריה אחת - יש לשכפל לשאר -->
+                <a href="products/bedding.html" class="category-card">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg');"></div>
+                    <div class="category-info">
+                        <h3>מצעי יוקרה</h3>
+                        <p>טקסטיל מובחר לשינה מושלמת</p>
+                        <span class="category-link">צפה במוצרים ←</span>
+                    </div>
+                </a>
+                
                 <a href="products/chandeliers.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Chandeliers" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Chandeliers</h3>
-                        <p>Stunning lighting fixtures to elevate any room</p>
-                    </div>
-                </a>
-
-                <a href="products/jewelry.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Jewelry" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Jewelry</h3>
-                        <p>Elegant pieces to complete your collection</p>
-                    </div>
-                </a>
-
-                <a href="products/handbags.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Handbags" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Handbags</h3>
-                        <p>Timeless accessories for every occasion</p>
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg');"></div>
+                    <div class="category-info">
+                        <h3>נברשות</h3>
+                        <p>תאורה שמעצבת את החלל</p>
+                        <span class="category-link">צפה במוצרים ←</span>
                     </div>
                 </a>
 
                 <a href="products/watches.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Watches" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Watches</h3>
-                        <p>Sophisticated timepieces for the discerning</p>
-                    </div>
-                </a>
-
-                <a href="products/bedding.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Bedding" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Bedding</h3>
-                        <p>Luxury textiles for ultimate comfort</p>
-                    </div>
-                </a>
-
-                <a href="products/wall-art.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall Art" class="category-card-image">
-                    <div class="category-card-content">
-                        <h3>Wall Art</h3>
-                        <p>Artistic expressions to inspire your space</p>
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg');"></div>
+                    <div class="category-info">
+                        <h3>שעוני יוקרה</h3>
+                        <p>דיוק וסטייל על פרק היד</p>
+                        <span class="category-link">צפה במוצרים ←</span>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 StyleVault. All rights reserved.</p>
-        <p>Discover luxury. Embrace elegance.</p>
-        <div class="disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>StyleVault</h4>
+                    <p>היעד שלכם למוצרי יוקרה נבחרים.</p>
+                </div>
+                <div>
+                    <h4>קישורים מהירים</h4>
+                    <ul>
+                        <li><a href="index.html">בית</a></li>
+                        <li><a href="products/bedding.html">מצעים</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
+                <p class="affiliate-disclosure">גילוי נאות: האתר מכיל קישורי שותפים (Affiliate), אנו עשויים להרוויח עמלה על רכישות ללא עלות נוספת עבורכם.</p>
+            </div>
         </div>
     </footer>
 </body>
