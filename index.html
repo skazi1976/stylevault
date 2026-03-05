@@ -3,340 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | StyleVault</title>
+    <title>StyleVault - Curated Luxury Finds</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
         }
-        
-        .navbar {
-            background-color: #16213e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #e94560;
-        }
-        
-        .nav-logo span {
-            color: white;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            padding: 4rem 2rem;
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 60px 20px;
             text-align: center;
-            margin-bottom: 3rem;
+            border-bottom: 2px solid #e94560;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
             color: #e94560;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        header p {
+            font-size: 1.3em;
             color: #b0b0b0;
+            font-style: italic;
         }
-        
+
+        .hero-section {
+            background: linear-gradient(180deg, rgba(25, 45, 85, 0.2) 0%, rgba(10, 10, 10, 1) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e94560;
+        }
+
+        .hero-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #e94560;
+        }
+
+        .hero-section p {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
-        .products-grid {
+
+        .categories-section {
+            padding: 60px 20px;
+        }
+
+        .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        
-        .product-card {
+
+        .category-card {
             background-color: #16213e;
+            border: 1px solid #e94560;
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
         }
-        
-        .product-card:hover {
+
+        .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
         }
-        
-        .product-image {
+
+        .category-card-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
             background-color: #0a0a0a;
         }
-        
-        .product-info {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+
+        .category-card-content {
+            padding: 30px;
+            text-align: center;
         }
-        
-        .product-title {
-            font-size: 0.95rem;
-            color: #e0e0e0;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
+
+        .category-card-content h3 {
+            font-size: 1.8em;
             color: #e94560;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
         }
-        
-        .btn-shop {
+
+        .category-card-content p {
+            color: #b0b0b0;
+            font-size: 0.95em;
+        }
+
+        .category-card-content::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
             background-color: #e94560;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
+            margin: 15px auto 0;
         }
-        
-        .btn-shop:hover {
-            background-color: #d73450;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .category-card {
-            background-color: #16213e;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 300px;
-            position: relative;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        
-        .category-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .category-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-        
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-name {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e94560;
-            text-align: center;
-        }
-        
-        .category-card a {
-            text-decoration: none;
-            display: 100%;
-        }
-        
+
         footer {
             background-color: #16213e;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
             border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
-        
+
         footer p {
-            font-size: 0.9rem;
             color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
-        
-        .affiliate-disclosure {
-            background-color: #0f3460;
-            padding: 1.5rem;
-            border-left: 4px solid #e94560;
-            margin-bottom: 2rem;
-            border-radius: 4px;
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .affiliate-disclosure p {
-            font-size: 0.85rem;
-            color: #d0d0d0;
-        }
-        
+
         @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+            header h1 {
+                font-size: 2.5em;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .products-grid {
+
+            .categories-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.5rem;
+
+            .hero-section h2 {
+                font-size: 1.5em;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>StyleVault</h1>
+        <p>Curated Luxury Finds</p>
+    </header>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
-            <div class="nav-links">
-                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
-            </div>
-        </div>
-    </nav>
-        <div class="hero">
-        <h1>STYLE VAULT</h1>
-        <p>Discover Luxury, Affordable Fashion & Home Decor</p>
+    <div class="hero-section">
+        <h2>Discover Exquisite Collections</h2>
+        <p>Explore our carefully curated selection of luxury items across chandeliers, jewelry, handbags, watches, bedding, and wall art. Each product is selected to bring sophistication and elegance to your lifestyle.</p>
     </div>
-    
+
     <div class="container">
-        <div class="category-grid">
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Chandeliers" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Chandeliers'">
-                <div class="category-overlay">
-                    <a href="products/chandeliers.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Chandeliers</div>
-                    </a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Jewelry" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Jewelry'">
-                <div class="category-overlay">
-                    <a href="products/jewelry.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Jewelry</div>
-                    </a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Handbags" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Handbags'">
-                <div class="category-overlay">
-                    <a href="products/handbags.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Handbags</div>
-                    </a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Watches" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Watches'">
-                <div class="category-overlay">
-                    <a href="products/watches.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Watches</div>
-                    </a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Bedding" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Bedding'">
-                <div class="category-overlay">
-                    <a href="products/bedding.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Bedding</div>
-                    </a>
-                </div>
-            </div>
-            <div class="category-card">
-                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall Art" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Wall Art'">
-                <div class="category-overlay">
-                    <a href="products/wall-art.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        <div class="category-name">Wall Art</div>
-                    </a>
-                </div>
+        <div class="categories-section">
+            <div class="categories-grid">
+                <a href="products/chandeliers.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Chandeliers" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Chandeliers</h3>
+                        <p>Stunning lighting fixtures to elevate any room</p>
+                    </div>
+                </a>
+
+                <a href="products/jewelry.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Jewelry" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Jewelry</h3>
+                        <p>Elegant pieces to complete your collection</p>
+                    </div>
+                </a>
+
+                <a href="products/handbags.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Handbags" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Handbags</h3>
+                        <p>Timeless accessories for every occasion</p>
+                    </div>
+                </a>
+
+                <a href="products/watches.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Watches" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Watches</h3>
+                        <p>Sophisticated timepieces for the discerning</p>
+                    </div>
+                </a>
+
+                <a href="products/bedding.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Bedding" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Bedding</h3>
+                        <p>Luxury textiles for ultimate comfort</p>
+                    </div>
+                </a>
+
+                <a href="products/wall-art.html" class="category-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall Art" class="category-card-image">
+                    <div class="category-card-content">
+                        <h3>Wall Art</h3>
+                        <p>Artistic expressions to inspire your space</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+        </div>
     </footer>
 </body>
 </html>
