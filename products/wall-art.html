@@ -3,536 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wall Art | StyleVault</title>
+    <title>Wall Art - StyleVault</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
         }
-        
-        .navbar {
-            background-color: #16213e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #e94560;
-        }
-        
-        .nav-logo span {
-            color: white;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            padding: 4rem 2rem;
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 3rem;
+            border-bottom: 2px solid #e94560;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
             color: #e94560;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6b7a;
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .page-subtitle {
+            font-size: 1.1em;
             color: #b0b0b0;
+            margin-bottom: 30px;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
+
+        .products-section {
+            padding: 40px 20px;
+        }
+
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-        
+
         .product-card {
             background-color: #16213e;
+            border: 1px solid #e94560;
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
             display: flex;
             flex-direction: column;
         }
-        
+
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
         }
-        
+
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
             background-color: #0a0a0a;
         }
-        
+
         .product-info {
-            padding: 1.5rem;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-        
+
         .product-title {
-            font-size: 0.95rem;
-            color: #e0e0e0;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            color: #e94560;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-shop {
-            background-color: #e94560;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-        }
-        
-        .btn-shop:hover {
-            background-color: #d73450;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .category-card {
-            background-color: #16213e;
-            border-radius: 8px;
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            min-height: 2.4em;
             overflow: hidden;
-            height: 300px;
-            position: relative;
-            transition: transform 0.3s;
-            cursor: pointer;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
-        
-        .category-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .category-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-        
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-name {
-            font-size: 2rem;
-            font-weight: bold;
+
+        .product-price {
+            font-size: 1.4em;
             color: #e94560;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e94560;
+            color: #ffffff;
             text-align: center;
-        }
-        
-        .category-card a {
             text-decoration: none;
-            display: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
         }
-        
+
+        .shop-btn:hover {
+            background-color: #ff6b7a;
+        }
+
         footer {
             background-color: #16213e;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
             border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
-        
+
         footer p {
-            font-size: 0.9rem;
             color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
-        
-        .affiliate-disclosure {
-            background-color: #0f3460;
-            padding: 1.5rem;
-            border-left: 4px solid #e94560;
-            margin-bottom: 2rem;
-            border-radius: 4px;
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .affiliate-disclosure p {
-            font-size: 0.85rem;
-            color: #d0d0d0;
-        }
-        
+
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+
+            .product-image {
+                height: 150px;
             }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
+
+            .product-info {
+                padding: 15px;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.5rem;
+
+            .product-price {
+                font-size: 1.1em;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>StyleVault</h1>
+    </header>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
-            <div class="nav-links">
-                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="./#">Wall Art</a>
-            </div>
-        </div>
-    </nav>
-        <div class="hero">
-        <h1>Wall Art</h1>
-        <p>Curated luxury wall art collection</p>
-    </div>
-    
     <div class="container">
-        <div class="affiliate-disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
-        </div>
+        <a href="../index.html" class="back-link">← Back to Home</a>
         
-        <div class="products-grid">
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Abstract Garden Landscape Flowers Canvas Oil Painting Large Wall Panel Picture Luxury Murals Art" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Abstract Garden Landscape Flowers Canvas Oil Painting Large Wall Panel Picture Luxury Murals Art</h3>
-                <div class="product-price">$17.18</div>
-                <a href="https://www.aliexpress.com/item/3256809453881109.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+        <div class="products-section">
+            <h2 class="page-title">Wall Art</h2>
+            <p class="page-subtitle">Explore our curated collection of Wall Art</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.18</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3rvkGmb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfd1a5df07a0241059c78c845bbcad318Q.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$25.12</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4LtA9B1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd379eb7840044c859f5bfdb92a8e431bn.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.47</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4W4P7wB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6f63deb85d03430086b6e3d36ddb57bde.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.33</div>
+                        <a href="https://s.click.aliexpress.com/e/_c39A8hHl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa2c9093081704d6c83975edbe1a4752dZ.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.16</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3bFqgpD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9f9d760acc434647932b3cd5fe3f0155t.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$60.53</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3kQLHtN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb021bf4f95a94437ac1dc17af8ae71e0K.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$18.52</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4oOzA2x" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sed01c48fe00a4ca2be62a2720e83cd50x.png" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$40.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3uZNgZh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S27182974a9574771b66294774be9b4b2F.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$19.85</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3SjxjaX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6dfbb344b7334a9fb844ded5d8cb4740S.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$38.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3AGs71N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd976fb6f4f7448399b9b4b1aabae8f71I.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.67</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3sQI9u3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9d090bca50074e6a8e26b5cc5e9dcce5C.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$3.65</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4dUmfOr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdaa2ce9153f34257baf975b3b020f2e3O.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.69</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3TvX88J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S466079ba83fe410b90c873252401285bu.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.39</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3meBfd9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5362bb95229344899761d0c4f3c016a8q.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.42</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3vfD6qb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa859c05eae8d4dfcafd88c4f35413025S.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.04</div>
+                        <a href="https://s.click.aliexpress.com/e/_c40zgfQr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5283b9fa462147238904e9875f4c97d8T.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.58</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3DHc8Gn" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S446f02f335b640269ab8303878f6b35aJ.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$3.66</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3CfsjDz" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3d498a4be2de41488103645b82a7468fh.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.22</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4rE76Ib" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb84e21f1ded84e56b10c8a31e5864b81d.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.59</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4knw8bN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S918a2397df8e42c98e513453f01f9834r.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$16.82</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3ZPZfV9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S44381c21e2ca44bdbf050a4cd9688a035.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.85</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3R5F9mJ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scd92c575de9c402fb6b34f48145dece8E.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4aKHWvD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1dd20656399942d2a082a0227dd101aft.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$23.76</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2xGXG5t" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sccc7c08de3d245738a27a2b41743153a8.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$18.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3GKKAK3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/U077fe2a851974b1780a21afc5539f846k.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$34.00</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3OUughD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa740be61f51948769ee4fc135e79c372G.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$34.00</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4SdMZ6X" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S110700b0300b4b5096e3f6b98aff87156.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$15.24</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2yw39RZ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S28a47e479bdc46f9ade47afade977d1bM.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c336DhyT" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b3a92b80645407abc7e92ad08d2da57i.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$15.38</div>
+                        <a href="https://s.click.aliexpress.com/e/_c34fj7Yj" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfd1a5df07a0241059c78c845bbcad318Q.jpg" alt="Light luxury 3D Texture Large Leaf Living Room Decoration Painting Modern Frameless Canvas" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Light luxury 3D Texture Large Leaf Living Room Decoration Painting Modern Frameless Canvas</h3>
-                <div class="product-price">$25.12</div>
-                <a href="https://www.aliexpress.com/item/3256808376605487.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd379eb7840044c859f5bfdb92a8e431bn.jpg" alt="Home Decor Large Luxury Hand-painted Thickness White Oil Painting Thick Acrylic Abstract Canvas" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Home Decor Large Luxury Hand-painted Thickness White Oil Painting Thick Acrylic Abstract Canvas</h3>
-                <div class="product-price">$21.47</div>
-                <a href="https://www.aliexpress.com/item/3256809306846429.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6f63deb85d03430086b6e3d36ddb57bde.jpg" alt="Thickness Texture White Abstract Big Size Wall Hanging Knife Acrylic Painting Hotel Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Thickness Texture White Abstract Big Size Wall Hanging Knife Acrylic Painting Hotel Decor</h3>
-                <div class="product-price">$17.33</div>
-                <a href="https://www.aliexpress.com/item/3256811463367063.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890a.jpg" alt="Beautiful Canvas Picture Art Hand-painted Modern Abstract Landscape Oil Painting Luxury" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Beautiful Canvas Picture Art Hand-painted Modern Abstract Landscape Oil Painting Luxury</h3>
-                <div class="product-price">$23.50</div>
-                <a href="https://www.aliexpress.com/item/3256808949663244.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901a.jpg" alt="Gold Foil Abstract Canvas Wall Art Modern Luxury Living Room Decoration Large Painting" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Gold Foil Abstract Canvas Wall Art Modern Luxury Living Room Decoration Large Painting</h3>
-                <div class="product-price">$29.80</div>
-                <a href="https://www.aliexpress.com/item/3256809234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012a.jpg" alt="Black Gold Abstract Canvas Painting Modern Wall Art Luxury Home Decoration Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Black Gold Abstract Canvas Painting Modern Wall Art Luxury Home Decoration Living Room</h3>
-                <div class="product-price">$22.35</div>
-                <a href="https://www.aliexpress.com/item/3256808345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123a.jpg" alt="Ocean Waves Abstract Canvas Art Large Modern Luxury Blue Gold Wall Painting Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Ocean Waves Abstract Canvas Art Large Modern Luxury Blue Gold Wall Painting Decoration</h3>
-                <div class="product-price">$35.70</div>
-                <a href="https://www.aliexpress.com/item/3256807456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234a.jpg" alt="Minimalist Line Art Canvas Painting Modern Abstract Luxury Wall Decoration Home" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Minimalist Line Art Canvas Painting Modern Abstract Luxury Wall Decoration Home</h3>
-                <div class="product-price">$18.90</div>
-                <a href="https://www.aliexpress.com/item/3256809567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345a.jpg" alt="3D Texture Abstract Canvas Painting Modern Luxury Large Wall Art Gold Acrylic" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">3D Texture Abstract Canvas Painting Modern Luxury Large Wall Art Gold Acrylic</h3>
-                <div class="product-price">$42.15</div>
-                <a href="https://www.aliexpress.com/item/3256808678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456a.jpg" alt="Luxury Botanical Canvas Wall Art Green Gold Leaf Modern Large Painting Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Botanical Canvas Wall Art Green Gold Leaf Modern Large Painting Decoration</h3>
-                <div class="product-price">$26.40</div>
-                <a href="https://www.aliexpress.com/item/3256807789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567a.jpg" alt="Abstract Mountain Landscape Canvas Painting Large Modern Luxury Wall Art Home Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Abstract Mountain Landscape Canvas Painting Large Modern Luxury Wall Art Home Decor</h3>
-                <div class="product-price">$31.85</div>
-                <a href="https://www.aliexpress.com/item/3256809890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678a.jpg" alt="Gold Abstract Circle Canvas Painting Modern Luxury Wall Art Large Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Gold Abstract Circle Canvas Painting Modern Luxury Wall Art Large Living Room</h3>
-                <div class="product-price">$24.60</div>
-                <a href="https://www.aliexpress.com/item/3256808901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789a.jpg" alt="Japanese Style Canvas Art Painting Large Abstract Luxury Wall Decoration Home" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Japanese Style Canvas Art Painting Large Abstract Luxury Wall Decoration Home</h3>
-                <div class="product-price">$20.75</div>
-                <a href="https://www.aliexpress.com/item/3256807012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891a.jpg" alt="Large Abstract Color Block Canvas Painting Modern Luxury Wall Art Decoration Home" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Large Abstract Color Block Canvas Painting Modern Luxury Wall Art Decoration Home</h3>
-                <div class="product-price">$38.30</div>
-                <a href="https://www.aliexpress.com/item/3256809123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902a.jpg" alt="Marble Texture Abstract Canvas Art Modern Luxury Gold White Large Wall Painting" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Marble Texture Abstract Canvas Art Modern Luxury Gold White Large Wall Painting</h3>
-                <div class="product-price">$27.50</div>
-                <a href="https://www.aliexpress.com/item/3256808234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013a.jpg" alt="Sunset Abstract Canvas Oil Painting Large Modern Luxury Living Room Wall Art" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Sunset Abstract Canvas Oil Painting Large Modern Luxury Living Room Wall Art</h3>
-                <div class="product-price">$33.90</div>
-                <a href="https://www.aliexpress.com/item/3256807345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124a.jpg" alt="Nordic Abstract Canvas Painting Modern Luxury Geometric Gold Wall Art Large" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Nordic Abstract Canvas Painting Modern Luxury Geometric Gold Wall Art Large</h3>
-                <div class="product-price">$19.45</div>
-                <a href="https://www.aliexpress.com/item/3256809456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235a.jpg" alt="Texture Abstract Canvas Painting Handmade Large Modern Luxury Wall Art Acrylic" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Texture Abstract Canvas Painting Handmade Large Modern Luxury Wall Art Acrylic</h3>
-                <div class="product-price">$45.60</div>
-                <a href="https://www.aliexpress.com/item/3256808567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346a.jpg" alt="Luxury Abstract Flower Canvas Painting Large Modern Gold Petal Wall Art Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Abstract Flower Canvas Painting Large Modern Gold Petal Wall Art Decoration</h3>
-                <div class="product-price">$28.75</div>
-                <a href="https://www.aliexpress.com/item/3256807678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457a.jpg" alt="City Skyline Abstract Canvas Art Large Modern Luxury Wall Painting Gold Black" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">City Skyline Abstract Canvas Art Large Modern Luxury Wall Painting Gold Black</h3>
-                <div class="product-price">$36.20</div>
-                <a href="https://www.aliexpress.com/item/3256809789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568a.jpg" alt="3D Abstract Sculpture Canvas Wall Art Modern Luxury Large Metallic Painting" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">3D Abstract Sculpture Canvas Wall Art Modern Luxury Large Metallic Painting</h3>
-                <div class="product-price">$52.80</div>
-                <a href="https://www.aliexpress.com/item/3256808890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679a.jpg" alt="Green Abstract Nature Canvas Painting Large Modern Luxury Forest Wall Art" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Green Abstract Nature Canvas Painting Large Modern Luxury Forest Wall Art</h3>
-                <div class="product-price">$23.15</div>
-                <a href="https://www.aliexpress.com/item/3256807901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790a.jpg" alt="Luxury Large Canvas Art Print Modern Abstract Gold Geometric Wall Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Large Canvas Art Print Modern Abstract Gold Geometric Wall Decoration</h3>
-                <div class="product-price">$16.90</div>
-                <a href="https://www.aliexpress.com/item/3256809012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892a.jpg" alt="Abstract Water Ripple Canvas Painting Large Modern Luxury Blue Gold Wall Art" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Abstract Water Ripple Canvas Painting Large Modern Luxury Blue Gold Wall Art</h3>
-                <div class="product-price">$41.25</div>
-                <a href="https://www.aliexpress.com/item/3256808123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903a.jpg" alt="Modern Abstract Oil Painting Canvas Large Luxury Hand-painted Wall Art Home Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Abstract Oil Painting Canvas Large Luxury Hand-painted Wall Art Home Decor</h3>
-                <div class="product-price">$48.90</div>
-                <a href="https://www.aliexpress.com/item/3256807234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014a.jpg" alt="Black White Abstract Canvas Painting Modern Luxury Large Minimalist Wall Art" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Black White Abstract Canvas Painting Modern Luxury Large Minimalist Wall Art</h3>
-                <div class="product-price">$22.60</div>
-                <a href="https://www.aliexpress.com/item/3256809345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125a.jpg" alt="Luxury Gold Leaf Abstract Canvas Art Large Modern Glamour Wall Painting Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Gold Leaf Abstract Canvas Art Large Modern Glamour Wall Painting Decoration</h3>
-                <div class="product-price">$34.75</div>
-                <a href="https://www.aliexpress.com/item/3256808456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236a.jpg" alt="Abstract Seascape Canvas Painting Large Modern Luxury Blue Ocean Wall Art Home" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Abstract Seascape Canvas Painting Large Modern Luxury Blue Ocean Wall Art Home</h3>
-                <div class="product-price">$39.40</div>
-                <a href="https://www.aliexpress.com/item/3256807567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347a.jpg" alt="Modern Abstract Canvas Art Luxury Large Red Gold Texture Wall Painting Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Abstract Canvas Art Luxury Large Red Gold Texture Wall Painting Decor</h3>
-                <div class="product-price">$30.55</div>
-                <a href="https://www.aliexpress.com/item/3256809678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+        </div>
     </footer>
 </body>
 </html>

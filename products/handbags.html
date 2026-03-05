@@ -3,536 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handbags | StyleVault</title>
+    <title>Handbags - StyleVault</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
         }
-        
-        .navbar {
-            background-color: #16213e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #e94560;
-        }
-        
-        .nav-logo span {
-            color: white;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            padding: 4rem 2rem;
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 3rem;
+            border-bottom: 2px solid #e94560;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
             color: #e94560;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6b7a;
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .page-subtitle {
+            font-size: 1.1em;
             color: #b0b0b0;
+            margin-bottom: 30px;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
+
+        .products-section {
+            padding: 40px 20px;
+        }
+
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-        
+
         .product-card {
             background-color: #16213e;
+            border: 1px solid #e94560;
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
             display: flex;
             flex-direction: column;
         }
-        
+
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
         }
-        
+
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
             background-color: #0a0a0a;
         }
-        
+
         .product-info {
-            padding: 1.5rem;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-        
+
         .product-title {
-            font-size: 0.95rem;
-            color: #e0e0e0;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            color: #e94560;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-shop {
-            background-color: #e94560;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-        }
-        
-        .btn-shop:hover {
-            background-color: #d73450;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .category-card {
-            background-color: #16213e;
-            border-radius: 8px;
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            min-height: 2.4em;
             overflow: hidden;
-            height: 300px;
-            position: relative;
-            transition: transform 0.3s;
-            cursor: pointer;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
-        
-        .category-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .category-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-        
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-name {
-            font-size: 2rem;
-            font-weight: bold;
+
+        .product-price {
+            font-size: 1.4em;
             color: #e94560;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e94560;
+            color: #ffffff;
             text-align: center;
-        }
-        
-        .category-card a {
             text-decoration: none;
-            display: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
         }
-        
+
+        .shop-btn:hover {
+            background-color: #ff6b7a;
+        }
+
         footer {
             background-color: #16213e;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
             border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
-        
+
         footer p {
-            font-size: 0.9rem;
             color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
-        
-        .affiliate-disclosure {
-            background-color: #0f3460;
-            padding: 1.5rem;
-            border-left: 4px solid #e94560;
-            margin-bottom: 2rem;
-            border-radius: 4px;
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .affiliate-disclosure p {
-            font-size: 0.85rem;
-            color: #d0d0d0;
-        }
-        
+
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+
+            .product-image {
+                height: 150px;
             }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
+
+            .product-info {
+                padding: 15px;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.5rem;
+
+            .product-price {
+                font-size: 1.1em;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>StyleVault</h1>
+    </header>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
-            <div class="nav-links">
-                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="./#">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
-            </div>
-        </div>
-    </nav>
-        <div class="hero">
-        <h1>Handbags</h1>
-        <p>Curated luxury handbags collection</p>
-    </div>
-    
     <div class="container">
-        <div class="affiliate-disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
-        </div>
+        <a href="../index.html" class="back-link">← Back to Home</a>
         
-        <div class="products-grid">
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Luxury Handbag Fashion Print Large Capacity Soft Leather Women Shoulder Crossbody Bag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Handbag Fashion Print Large Capacity Soft Leather Women Shoulder Crossbody Bag</h3>
-                <div class="product-price">$31.73</div>
-                <a href="https://www.aliexpress.com/item/3256807619232944.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+        <div class="products-section">
+            <h2 class="page-title">Handbags</h2>
+            <p class="page-subtitle">Explore our curated collection of Handbag</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$29.32</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3bJK3BD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3c4e42652be943ea881f2e7d2a2feca8Q.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$41.24</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3miFpv9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3626044adace401c819d13496472f69fD.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$81.61</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3t8woA3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb47fd58084914f8b8b86ad49ac3d8375S.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$22.39</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3KiWEKT" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S49871d3b8aaa4858979e07c155ee2052I.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$116.24</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3czekht" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf28833e4848d4a67b36bf4a7d909703bD.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$52.50</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3fSMmrN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S939a0fc4c22441a0b3bbeefcfae7393cH.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$31.33</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3UX7nSJ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6d84ff413ed94d1ab7834b00dde44badp.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$34.02</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3nJHFVz" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0b7ee91a01af4fb8a5e8b467048a4dedr.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$78.92</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3wNllkb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb35bf250599c433cab50e895e2ef3202z.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$50.09</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3gYCCb9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S79ead8ee83ec431590a8e13517fa06b8A.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$104.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2uc5lyj" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se3d4e90fa9b049bda24b6ca179c46964j.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$53.59</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4BryFQX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1aa008e4ef3840abbedf3f4bc1307d0f5.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$65.22</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4NlODXh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa846c2b8c17f447989b3b56d79c74822x.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$51.08</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4229Ejl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S10ac232dd6f14cf3a0a01d51c424e6aeb.png" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$24.61</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3V9rDnD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sba90ec5977f04066a435a3a0820d42c9B.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$57.04</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3ddFju3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S76414021e5b74830afa566e520a33f9eP.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$64.25</div>
+                        <a href="https://s.click.aliexpress.com/e/_c43OO7Wr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scdc384a627e343439c0ee446fdc2c8dbP.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$119.13</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3wT2G2x" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfe79539eb0a1451984b2c73737a07805u.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$20.73</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3Ku7h1N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sbb812d54a05844abb26f8a8dfd88dfd9Y.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$32.33</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2uEKHd9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5d44af0cb4f34866af5e629b2b358eceT.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$33.54</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4BObjB1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9039a1d87aaa4487a10d8c6f607ca721z.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$29.19</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3xYy9zl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1rmtcf0bJ8KJjy1zjq6yqapXaL.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$27.43</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4CT98hh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S698ee845fb464794886e756f775da9b30.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$26.83</div>
+                        <a href="https://s.click.aliexpress.com/e/_c42sihwB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se6284bde6dbc4c0c9222a0d3b5e58481U.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$60.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4N3TgA7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se3d4e90fa9b049bda24b6ca179c46964j.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$54.60</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3U9gIZh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd3fca5c9c67c4f97869b93fc68f0dd16a.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$60.01</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3gAlfEX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5c428fcae76f424faa9df504e16b4141D.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$39.45</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3fY1HOr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S23260ffb2daa479aa35e6aa7a7e36059T.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$119.02</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3nzwi8J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S702da8338700412892aa3637df80bcf3O.jpg" alt="Luxury Handbag Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Handbag Item</h3>
+                        <div class="product-price">$28.07</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3VjMgqb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3c4e42652be943ea881f2e7d2a2feca8Q.jpg" alt="Autumn winter Women Cow Genuine Leather Tote Bag suede commuting Cowhide Handbags Large Capacity" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Autumn winter Women Cow Genuine Leather Tote Bag suede commuting Cowhide Handbags Large Capacity</h3>
-                <div class="product-price">$41.24</div>
-                <a href="https://www.aliexpress.com/item/3256809592244886.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3626044adace401c819d13496472f69fD.jpg" alt="PG Luxury High Capacity Tote Bags for Women 2026 Classic fashion Shoulder Bag Designer" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">PG Luxury High Capacity Tote Bags for Women 2026 Classic fashion Shoulder Bag Designer</h3>
-                <div class="product-price">$81.61</div>
-                <a href="https://www.aliexpress.com/item/3256809373926872.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb47fd58084914f8b8b86ad49ac3d8375S.jpg" alt="MOODS Lychee Pattern Underarm Shoulder Bags For Women Soft PU Leather Large Capacity Mini Tote" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">MOODS Lychee Pattern Underarm Shoulder Bags For Women Soft PU Leather Large Capacity Mini Tote</h3>
-                <div class="product-price">$22.39</div>
-                <a href="https://www.aliexpress.com/item/3256808547054727.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890h.jpg" alt="LA FESTIN Original Brand women bag Trend Large Capacity Tote Bags Leather Handbag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">LA FESTIN Original Brand women bag Trend Large Capacity Tote Bags Leather Handbag</h3>
-                <div class="product-price">$65.80</div>
-                <a href="https://www.aliexpress.com/item/3256810102328331.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901h.jpg" alt="Women Luxury Designer Leather Shoulder Bag Fashion Crossbody Handbag Large Capacity" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Luxury Designer Leather Shoulder Bag Fashion Crossbody Handbag Large Capacity</h3>
-                <div class="product-price">$45.90</div>
-                <a href="https://www.aliexpress.com/item/3256809234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012h.jpg" alt="Genuine Leather Women Tote Bag Luxury Fashion Designer Handbag Shoulder Crossbody" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Genuine Leather Women Tote Bag Luxury Fashion Designer Handbag Shoulder Crossbody</h3>
-                <div class="product-price">$58.75</div>
-                <a href="https://www.aliexpress.com/item/3256808345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123h.jpg" alt="Vintage Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Large" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Vintage Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Large</h3>
-                <div class="product-price">$39.40</div>
-                <a href="https://www.aliexpress.com/item/3256807456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234h.jpg" alt="Fashion Women PU Leather Handbag Luxury Designer Crossbody Bag Shoulder Tote" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Fashion Women PU Leather Handbag Luxury Designer Crossbody Bag Shoulder Tote</h3>
-                <div class="product-price">$28.60</div>
-                <a href="https://www.aliexpress.com/item/3256809567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345h.jpg" alt="Crocodile Pattern Leather Women Handbag Luxury Fashion Designer Shoulder Bag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crocodile Pattern Leather Women Handbag Luxury Fashion Designer Shoulder Bag</h3>
-                <div class="product-price">$52.15</div>
-                <a href="https://www.aliexpress.com/item/3256808678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456h.jpg" alt="Women Genuine Cowhide Leather Tote Bag Large Capacity Luxury Handbag Fashion" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Genuine Cowhide Leather Tote Bag Large Capacity Luxury Handbag Fashion</h3>
-                <div class="product-price">$74.30</div>
-                <a href="https://www.aliexpress.com/item/3256807789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567h.jpg" alt="Quilted Chain Shoulder Bag Women Luxury Fashion Designer Leather Crossbody Handbag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Quilted Chain Shoulder Bag Women Luxury Fashion Designer Leather Crossbody Handbag</h3>
-                <div class="product-price">$35.85</div>
-                <a href="https://www.aliexpress.com/item/3256809890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678h.jpg" alt="Fashion Brand Women Leather Bucket Bag Luxury Designer Handbag Shoulder Crossbody" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Fashion Brand Women Leather Bucket Bag Luxury Designer Handbag Shoulder Crossbody</h3>
-                <div class="product-price">$43.50</div>
-                <a href="https://www.aliexpress.com/item/3256808901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789h.jpg" alt="Elegant Women PU Leather Handbag Luxury Top Handle Bag Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Elegant Women PU Leather Handbag Luxury Top Handle Bag Fashion Designer Shoulder</h3>
-                <div class="product-price">$33.25</div>
-                <a href="https://www.aliexpress.com/item/3256807012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891h.jpg" alt="Women Suede Leather Tote Bag Luxury Large Capacity Handbag Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Suede Leather Tote Bag Luxury Large Capacity Handbag Fashion Designer Shoulder</h3>
-                <div class="product-price">$48.70</div>
-                <a href="https://www.aliexpress.com/item/3256809123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902h.jpg" alt="Woven Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Crossbody" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Woven Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Crossbody</h3>
-                <div class="product-price">$56.40</div>
-                <a href="https://www.aliexpress.com/item/3256808234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013h.jpg" alt="Small Square Bag Women Luxury Leather Crossbody Handbag Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Small Square Bag Women Luxury Leather Crossbody Handbag Fashion Designer Shoulder</h3>
-                <div class="product-price">$25.90</div>
-                <a href="https://www.aliexpress.com/item/3256807345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124h.jpg" alt="Women Large Capacity Leather Tote Handbag Luxury Brand Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Large Capacity Leather Tote Handbag Luxury Brand Fashion Designer Shoulder</h3>
-                <div class="product-price">$67.85</div>
-                <a href="https://www.aliexpress.com/item/3256809456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235h.jpg" alt="Retro Women Genuine Leather Handbag Luxury Designer Boston Bag Fashion Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Retro Women Genuine Leather Handbag Luxury Designer Boston Bag Fashion Shoulder</h3>
-                <div class="product-price">$71.20</div>
-                <a href="https://www.aliexpress.com/item/3256808567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346h.jpg" alt="Fashion Chain Flap Bag Women Luxury PU Leather Crossbody Handbag Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Fashion Chain Flap Bag Women Luxury PU Leather Crossbody Handbag Designer Shoulder</h3>
-                <div class="product-price">$29.95</div>
-                <a href="https://www.aliexpress.com/item/3256807678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457h.jpg" alt="Women Soft Leather Hobo Bag Luxury Large Capacity Handbag Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Soft Leather Hobo Bag Luxury Large Capacity Handbag Fashion Designer Shoulder</h3>
-                <div class="product-price">$38.60</div>
-                <a href="https://www.aliexpress.com/item/3256809789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568h.jpg" alt="Textured Leather Women Clutch Bag Luxury Designer Evening Handbag Fashion Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Textured Leather Women Clutch Bag Luxury Designer Evening Handbag Fashion Shoulder</h3>
-                <div class="product-price">$24.75</div>
-                <a href="https://www.aliexpress.com/item/3256808890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679h.jpg" alt="Women Canvas Leather Tote Bag Luxury Large Capacity Handbag Fashion Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Canvas Leather Tote Bag Luxury Large Capacity Handbag Fashion Shoulder</h3>
-                <div class="product-price">$42.30</div>
-                <a href="https://www.aliexpress.com/item/3256807901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790h.jpg" alt="Saddle Bag Women Luxury PU Leather Crossbody Handbag Fashion Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Saddle Bag Women Luxury PU Leather Crossbody Handbag Fashion Designer Shoulder</h3>
-                <div class="product-price">$31.50</div>
-                <a href="https://www.aliexpress.com/item/3256809012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892h.jpg" alt="Women Genuine Leather Messenger Bag Luxury Designer Fashion Crossbody Handbag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Genuine Leather Messenger Bag Luxury Designer Fashion Crossbody Handbag</h3>
-                <div class="product-price">$55.80</div>
-                <a href="https://www.aliexpress.com/item/3256808123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903h.jpg" alt="Large Women Leather Shopping Tote Bag Luxury Fashion Handbag Designer Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Large Women Leather Shopping Tote Bag Luxury Fashion Handbag Designer Shoulder</h3>
-                <div class="product-price">$63.45</div>
-                <a href="https://www.aliexpress.com/item/3256807234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014h.jpg" alt="Mini Leather Crossbody Bag Women Luxury Fashion Designer Small Handbag Shoulder" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Mini Leather Crossbody Bag Women Luxury Fashion Designer Small Handbag Shoulder</h3>
-                <div class="product-price">$21.60</div>
-                <a href="https://www.aliexpress.com/item/3256809345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125h.jpg" alt="Women Genuine Leather Backpack Fashion Luxury Designer Handbag Travel Shoulder Bag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Genuine Leather Backpack Fashion Luxury Designer Handbag Travel Shoulder Bag</h3>
-                <div class="product-price">$78.90</div>
-                <a href="https://www.aliexpress.com/item/3256808456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236h.jpg" alt="Embossed Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Crossbody" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Embossed Leather Women Handbag Luxury Designer Shoulder Bag Fashion Tote Crossbody</h3>
-                <div class="product-price">$47.25</div>
-                <a href="https://www.aliexpress.com/item/3256807567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347h.jpg" alt="Women Pebbled Leather Tote Handbag Luxury Fashion Brand Designer Shoulder Bag" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Women Pebbled Leather Tote Handbag Luxury Fashion Brand Designer Shoulder Bag</h3>
-                <div class="product-price">$59.70</div>
-                <a href="https://www.aliexpress.com/item/3256809678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -3,536 +3,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandeliers | StyleVault</title>
+    <title>Chandeliers - StyleVault</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
             line-height: 1.6;
         }
-        
-        .navbar {
-            background-color: #16213e;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #e94560;
-        }
-        
-        .nav-logo span {
-            color: white;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #e0e0e0;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .nav-links a:hover {
-            color: #e94560;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            padding: 4rem 2rem;
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 3rem;
+            border-bottom: 2px solid #e94560;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
             color: #e94560;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6b7a;
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .page-subtitle {
+            font-size: 1.1em;
             color: #b0b0b0;
+            margin-bottom: 30px;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
-        
+
+        .products-section {
+            padding: 40px 20px;
+        }
+
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-        
+
         .product-card {
             background-color: #16213e;
+            border: 1px solid #e94560;
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
             display: flex;
             flex-direction: column;
         }
-        
+
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
         }
-        
+
         .product-image {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
             background-color: #0a0a0a;
         }
-        
+
         .product-info {
-            padding: 1.5rem;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
-        
+
         .product-title {
-            font-size: 0.95rem;
-            color: #e0e0e0;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-        
-        .product-price {
-            font-size: 1.5rem;
-            color: #e94560;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .btn-shop {
-            background-color: #e94560;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-        }
-        
-        .btn-shop:hover {
-            background-color: #d73450;
-        }
-        
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .category-card {
-            background-color: #16213e;
-            border-radius: 8px;
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            min-height: 2.4em;
             overflow: hidden;
-            height: 300px;
-            position: relative;
-            transition: transform 0.3s;
-            cursor: pointer;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
-        
-        .category-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .category-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-        
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .category-name {
-            font-size: 2rem;
-            font-weight: bold;
+
+        .product-price {
+            font-size: 1.4em;
             color: #e94560;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e94560;
+            color: #ffffff;
             text-align: center;
-        }
-        
-        .category-card a {
             text-decoration: none;
-            display: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
         }
-        
+
+        .shop-btn:hover {
+            background-color: #ff6b7a;
+        }
+
         footer {
             background-color: #16213e;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
             border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
-        
+
         footer p {
-            font-size: 0.9rem;
             color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
-        
-        .affiliate-disclosure {
-            background-color: #0f3460;
-            padding: 1.5rem;
-            border-left: 4px solid #e94560;
-            margin-bottom: 2rem;
-            border-radius: 4px;
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .affiliate-disclosure p {
-            font-size: 0.85rem;
-            color: #d0d0d0;
-        }
-        
+
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+
+            .product-image {
+                height: 150px;
             }
-            
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
+
+            .product-info {
+                padding: 15px;
             }
-        }
-        
-        @media (max-width: 480px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.5rem;
+
+            .product-price {
+                font-size: 1.1em;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>StyleVault</h1>
+    </header>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
-            <div class="nav-links">
-                <a href="./#">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
-            </div>
-        </div>
-    </nav>
-        <div class="hero">
-        <h1>Chandeliers</h1>
-        <p>Curated luxury chandeliers collection</p>
-    </div>
-    
     <div class="container">
-        <div class="affiliate-disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
-        </div>
+        <a href="../index.html" class="back-link">← Back to Home</a>
         
-        <div class="products-grid">
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Modern Ceiling Lamp Crystal Led Chandelier Bedroom Lustre Fixture Pendant Light Home Decor K9 Luxury" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Ceiling Lamp Crystal Led Chandelier Bedroom Lustre Fixture Pendant Light Home Decor K9 Luxury</h3>
-                <div class="product-price">$106.92</div>
-                <a href="https://www.aliexpress.com/item/3256808107395288.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+        <div class="products-section">
+            <h2 class="page-title">Chandeliers</h2>
+            <p class="page-subtitle">Explore our curated collection of Chandelier</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$106.92</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3X0qKEb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdb05d4ed04d148cea4cb4012f7c813cab.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$112.85</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3WK60Nh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8663c7941eab4af781ef280a483196e8F.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$87.37</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3p6GM0J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Saf5c991ff8654956b2900e87a6248de6I.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$95.74</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3LPv1Zl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2151e2fdc5584137815f7b619a557aeb0.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$60.87</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3MVVL5N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ufc620b74778043aabc1e2495a0848c926.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$35.06</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4OQNKS7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc58739a8d35b435bbcc01b18da5638a5J.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$46.62</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3h5LP2r" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S83d7d1031cc94ee097b82951f3ff4939G.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$37.84</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3yokOex" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Saa4f5a43d7154dfc8974e9666bb4f95bw.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$123.06</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3z5Irhl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb1667a93d6774ee0a6432bbe09de46d19.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$51.09</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2vH4OJ9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3797ec3ae5c3480d92f6603513bf1751E.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$100.04</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3egdN83" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S95db489224ad4c3481284d73e51f83b3g.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$52.10</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4DExMv1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S10345a08a1f24b23b7f5a21b544ad569w.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$95.20</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4EoXqVh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4651e8e71c3b40eeba116b4ec6172865z.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$53.38</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3iLBsyX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3cdd6deb183f4066a036f953bc18490bc.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$38.31</div>
+                        <a href="https://s.click.aliexpress.com/e/_c44d8LAB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5f986e6c3ed84c90a14444743b468354n.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$73.52</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3CC65iX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6f03ab7d464d46edaef713efa13d8ab2d.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$82.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3YIx2or" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S048558009695453da420db30d1f22eefO.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$129.55</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4q1zl07" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sebfa007864dc4e58a424bc8d18991d24v.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$66.43</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3Nyk3Lh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S13cb300dc1274c9b940768efe29e9b3d9.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$100.05</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2xlvqQb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdfb263bde59c4d2cba17c8e7a15b4615o.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$141.01</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4FXmm8B" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb7d79262e4944bb5b68853ab69a80f7a0.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$84.63</div>
+                        <a href="https://s.click.aliexpress.com/e/_c34DBm3N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S152293aa5a204743b59a03e1978caa0dy.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$139.23</div>
+                        <a href="https://s.click.aliexpress.com/e/_c45M33GL" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6ddf74bf90d741b489ba2c456c2079b7X.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$37.17</div>
+                        <a href="https://s.click.aliexpress.com/e/_c41MAk5p" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7b13b6ee1e6646129365c12b4179395e8.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$75.97</div>
+                        <a href="https://s.click.aliexpress.com/e/_c40rc2YR" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8c35bbd382e343728cf4640043481ce4T.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$43.90</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3DmqnOJ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S99608857397245dcba8f62099b36b52as.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$71.42</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3jh8pcx" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc7b2b87e022c44c4ac90f81b7702e9e1I.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$57.19</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3Q8NnJ1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdc8d2404455a4de1b7826651bed9a354n.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$96.10</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2y3Vo63" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S59a6b00752bd4c61863845c4cc140346e.jpg" alt="Luxury Chandelier Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Chandelier Item</h3>
+                        <div class="product-price">$89.32</div>
+                        <a href="https://s.click.aliexpress.com/e/_c33bL4Xl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdb05d4ed04d148cea4cb4012f7c813cab.jpg" alt="IRALAN Modern light luxury crystal Led ceiling lamp 3-color light changing ceiling chandeliers for living room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">IRALAN Modern light luxury crystal Led ceiling lamp 3-color light changing ceiling chandeliers for living room</h3>
-                <div class="product-price">$112.85</div>
-                <a href="https://www.aliexpress.com/item/3256809436787867.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8663c7941eab4af781ef280a483196e8F.jpg" alt="Modern Crystal Luxury E14 LED Lights Chandelier For Living Room Bedroom lustre Ceiling pendant lamp" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Crystal Luxury E14 LED Lights Chandelier For Living Room Bedroom lustre Ceiling pendant lamp</h3>
-                <div class="product-price">$87.37</div>
-                <a href="https://www.aliexpress.com/item/3256807520970991.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Saf5c991ff8654956b2900e87a6248de6I.jpg" alt="Crystal LED Ceiling Lamp Modern Chandelier Pendant Light Luxury Home Decor Living Dining Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crystal LED Ceiling Lamp Modern Chandelier Pendant Light Luxury Home Decor Living Dining Room</h3>
-                <div class="product-price">$95.74</div>
-                <a href="https://www.aliexpress.com/item/3256809693168980.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890.jpg" alt="Led Ceiling Light Modern Home Decoration Crystal Chandelier Living Room Bedroom Dining Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Led Ceiling Light Modern Home Decoration Crystal Chandelier Living Room Bedroom Dining Room</h3>
-                <div class="product-price">$104.15</div>
-                <a href="https://www.aliexpress.com/item/3256809942205629.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901.jpg" alt="Crystal Chandelier Modern Luxury LED Ceiling Lamp Gold Chrome Finish Living Room Decoration" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crystal Chandelier Modern Luxury LED Ceiling Lamp Gold Chrome Finish Living Room Decoration</h3>
-                <div class="product-price">$89.50</div>
-                <a href="https://www.aliexpress.com/item/3256808234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012.jpg" alt="Luxury Modern Crystal Ceiling Chandelier Chrome LED Pendant Light Fixture Home Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Modern Crystal Ceiling Chandelier Chrome LED Pendant Light Fixture Home Decor</h3>
-                <div class="product-price">$78.25</div>
-                <a href="https://www.aliexpress.com/item/3256807345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123.jpg" alt="Nordic Modern Crystal Chandelier Gold Luxury Ceiling Lamp LED Lighting Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Nordic Modern Crystal Chandelier Gold Luxury Ceiling Lamp LED Lighting Living Room</h3>
-                <div class="product-price">$95.00</div>
-                <a href="https://www.aliexpress.com/item/3256809456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234.jpg" alt="European Style Crystal Chandelier Luxury Pendant Light Chrome Finish Bedroom" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">European Style Crystal Chandelier Luxury Pendant Light Chrome Finish Bedroom</h3>
-                <div class="product-price">$110.75</div>
-                <a href="https://www.aliexpress.com/item/3256808567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345.jpg" alt="K9 Crystal LED Chandelier Modern Luxury Ceiling Light Fixture Home Living Room Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">K9 Crystal LED Chandelier Modern Luxury Ceiling Light Fixture Home Living Room Decor</h3>
-                <div class="product-price">$92.40</div>
-                <a href="https://www.aliexpress.com/item/3256807678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456.jpg" alt="Round Crystal Chandelier Modern LED Ceiling Lamp Luxury Home Lighting Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Round Crystal Chandelier Modern LED Ceiling Lamp Luxury Home Lighting Fixture</h3>
-                <div class="product-price">$85.30</div>
-                <a href="https://www.aliexpress.com/item/3256809789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567.jpg" alt="Modern Flush Mount Crystal Chandelier LED Ceiling Light Gold Chrome Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Flush Mount Crystal Chandelier LED Ceiling Light Gold Chrome Living Room</h3>
-                <div class="product-price">$99.95</div>
-                <a href="https://www.aliexpress.com/item/3256808890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678.jpg" alt="Crystal Raindrop Chandelier Modern LED Pendant Light Luxury Dining Room Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crystal Raindrop Chandelier Modern LED Pendant Light Luxury Dining Room Fixture</h3>
-                <div class="product-price">$115.60</div>
-                <a href="https://www.aliexpress.com/item/3256807901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789.jpg" alt="Spiral Crystal Chandelier Modern Staircase LED Luxury Ceiling Pendant Light" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Spiral Crystal Chandelier Modern Staircase LED Luxury Ceiling Pendant Light</h3>
-                <div class="product-price">$128.90</div>
-                <a href="https://www.aliexpress.com/item/3256809012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891.jpg" alt="Square Crystal Chandelier Modern LED Ceiling Lamp Luxury Bedroom Living Room Light" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Square Crystal Chandelier Modern LED Ceiling Lamp Luxury Bedroom Living Room Light</h3>
-                <div class="product-price">$76.45</div>
-                <a href="https://www.aliexpress.com/item/3256808123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902.jpg" alt="Luxury Gold Crystal Chandelier Modern LED Ceiling Light Fixture Home Decor Lamp" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Gold Crystal Chandelier Modern LED Ceiling Light Fixture Home Decor Lamp</h3>
-                <div class="product-price">$88.70</div>
-                <a href="https://www.aliexpress.com/item/3256807234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013.jpg" alt="Dandelion Crystal Chandelier Modern LED Pendant Light Luxury Living Room Bedroom" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Dandelion Crystal Chandelier Modern LED Pendant Light Luxury Living Room Bedroom</h3>
-                <div class="product-price">$102.35</div>
-                <a href="https://www.aliexpress.com/item/3256809345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124.jpg" alt="Firework Crystal Chandelier Modern Sputnik LED Ceiling Light Luxury Gold Chrome" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Firework Crystal Chandelier Modern Sputnik LED Ceiling Light Luxury Gold Chrome</h3>
-                <div class="product-price">$94.80</div>
-                <a href="https://www.aliexpress.com/item/3256808456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235.jpg" alt="Crystal Branch Chandelier Modern LED Ceiling Pendant Light Luxury Gold Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crystal Branch Chandelier Modern LED Ceiling Pendant Light Luxury Gold Fixture</h3>
-                <div class="product-price">$108.15</div>
-                <a href="https://www.aliexpress.com/item/3256807567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346.jpg" alt="Luxury Chrome Crystal Chandelier Modern LED Flush Mount Ceiling Light Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Chrome Crystal Chandelier Modern LED Flush Mount Ceiling Light Fixture</h3>
-                <div class="product-price">$73.60</div>
-                <a href="https://www.aliexpress.com/item/3256809678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457.jpg" alt="Modern Crystal Ring Chandelier LED Ceiling Light Luxury Gold Chrome Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Modern Crystal Ring Chandelier LED Ceiling Light Luxury Gold Chrome Living Room</h3>
-                <div class="product-price">$119.40</div>
-                <a href="https://www.aliexpress.com/item/3256808789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568.jpg" alt="Nordic Crystal Chandelier Modern LED Pendant Light Luxury Minimalist Home Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Nordic Crystal Chandelier Modern LED Pendant Light Luxury Minimalist Home Decor</h3>
-                <div class="product-price">$81.25</div>
-                <a href="https://www.aliexpress.com/item/3256807890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679.jpg" alt="Art Deco Crystal Chandelier Modern LED Ceiling Lamp Luxury Living Room Bedroom" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Art Deco Crystal Chandelier Modern LED Ceiling Lamp Luxury Living Room Bedroom</h3>
-                <div class="product-price">$97.50</div>
-                <a href="https://www.aliexpress.com/item/3256809901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790.jpg" alt="Geometric Crystal Chandelier Modern LED Pendant Light Luxury Gold Home Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Geometric Crystal Chandelier Modern LED Pendant Light Luxury Gold Home Fixture</h3>
-                <div class="product-price">$86.75</div>
-                <a href="https://www.aliexpress.com/item/3256808012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892.jpg" alt="Cascading Crystal Chandelier Modern LED Ceiling Light Luxury Chrome Bedroom Lamp" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Cascading Crystal Chandelier Modern LED Ceiling Light Luxury Chrome Bedroom Lamp</h3>
-                <div class="product-price">$113.20</div>
-                <a href="https://www.aliexpress.com/item/3256807123456780.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903.jpg" alt="Snowflake Crystal Chandelier Modern LED Ceiling Pendant Light Luxury Gold Decor" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Snowflake Crystal Chandelier Modern LED Ceiling Pendant Light Luxury Gold Decor</h3>
-                <div class="product-price">$91.65</div>
-                <a href="https://www.aliexpress.com/item/3256809234567891.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014.jpg" alt="Luxury Empire Crystal Chandelier Modern LED Large Ceiling Light Gold Home Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Luxury Empire Crystal Chandelier Modern LED Large Ceiling Light Gold Home Fixture</h3>
-                <div class="product-price">$135.40</div>
-                <a href="https://www.aliexpress.com/item/3256808345678902.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125.jpg" alt="Mini Crystal Chandelier Modern LED Ceiling Light Luxury Small Pendant Lamp Fixture" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Mini Crystal Chandelier Modern LED Ceiling Light Luxury Small Pendant Lamp Fixture</h3>
-                <div class="product-price">$45.80</div>
-                <a href="https://www.aliexpress.com/item/3256807456789013.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236.jpg" alt="Crystal Globe Chandelier Modern LED Pendant Light Luxury Gold Chrome Living Room" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Crystal Globe Chandelier Modern LED Pendant Light Luxury Gold Chrome Living Room</h3>
-                <div class="product-price">$105.90</div>
-                <a href="https://www.aliexpress.com/item/3256809567890124.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
-        <div class="product-card">
-            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347.jpg" alt="Rectangular Crystal Chandelier Modern LED Ceiling Lamp Luxury Dining Room Island" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
-            <div class="product-info">
-                <h3 class="product-title">Rectangular Crystal Chandelier Modern LED Ceiling Lamp Luxury Dining Room Island</h3>
-                <div class="product-price">$142.30</div>
-                <a href="https://www.aliexpress.com/item/3256808678901235.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
-            </div>
-        </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+        </div>
     </footer>
 </body>
 </html>
