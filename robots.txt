@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skazi1976.github.io/stylevault/sitemap.xml
