@@ -1,476 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watches - StyleVault</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid #e94560;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #e94560;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #e94560;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .back-link:hover {
-            background-color: #ff6b7a;
-        }
-
-        .page-title {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #e94560;
-        }
-
-        .page-subtitle {
-            font-size: 1.1em;
-            color: #b0b0b0;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .products-section {
-            padding: 40px 20px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .product-card {
-            background-color: #16213e;
-            border: 1px solid #e94560;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-            border-color: #ff6b7a;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background-color: #0a0a0a;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1em;
-            color: #ffffff;
-            margin-bottom: 10px;
-            min-height: 2.4em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-
-        .product-price {
-            font-size: 1.4em;
-            color: #e94560;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .shop-btn {
-            display: inline-block;
-            width: 100%;
-            padding: 12px;
-            background-color: #e94560;
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: auto;
-        }
-
-        .shop-btn:hover {
-            background-color: #ff6b7a;
-        }
-
-        footer {
-            background-color: #16213e;
-            border-top: 1px solid #e94560;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        footer p {
-            color: #b0b0b0;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .disclosure {
-            color: #888888;
-            font-size: 0.85em;
-            margin-top: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .page-title {
-                font-size: 1.5em;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .product-image {
-                height: 150px;
-            }
-
-            .product-info {
-                padding: 15px;
-            }
-
-            .product-price {
-                font-size: 1.1em;
-            }
-        }
-    </style>
+    <title>שעוני יוקרה - StyleVault</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
-        <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
-            <a href="jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
-            <a href="handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
-            <a href="watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
-            <a href="bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
-            <a href="wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
+            <ul class="nav-links">
+                <li><a href="chandeliers.html">נברשות</a></li>
+                <li><a href="jewelry.html">תכשיטים</a></li>
+                <li><a href="handbags.html">תיקים</a></li>
+                <li><a href="watches.html">שעונים</a></li>
+                <li><a href="bedding.html">מצעים</a></li>
+                <li><a href="wall-art.html">אמנות קיר</a></li>
+            </ul>
         </div>
     </nav>
-    <header>
-        <h1>StyleVault</h1>
-    </header>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Home</a>
-        
-        <div class="products-section">
-            <h2 class="page-title">Watches</h2>
-            <p class="page-subtitle">Explore our curated collection of Watch</p>
-
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$67.63</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4eYSAnz" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3132723e16ed4eb7b62362e8cfbeca633.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$42.53</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4N60kCX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc58543c77b6949a1ab1205ca96fda723p.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$58.15</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3KFy3nD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfa12e53fbbf9435c9584c809f229baf0H.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$63.29</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3npl4KT" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc96b38c2da114c83984c14b0ef6f920d8.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$79.05</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3Ve92b9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Seaf400eca6cb42e08529c0b1d29bf630o.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$19.16</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3fROoI3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S768e93e1e0634e64abf61f6baaeff56a7.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$46.47</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4MOc7JD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S579d7a7547154ec69bfd188dbaea44eaf.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$87.38</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4pT39cT" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4539221cd59a4079996cadfcfe964ff77.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$94.49</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4Xsj679" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S17817b0c5cdf42e687690cb3c4039517F.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$26.74</div>
-                        <a href="https://s.click.aliexpress.com/e/_c42ffl4b" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8bf41d4fe6d54594880f615b7f27b3feW.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$83.69</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3v9hfLt" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4b982b49ee2b4847bdd3281adc809db9c.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$31.75</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3wwnn6J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf323000887834632a2a09d21180e7805K.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$22.64</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2JL7qht" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sad079ad2508944c085d536f4ba2c2cbaQ.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$20.37</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3cqM5Vz" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sda8a8b34a1b04556a939319c40a82b6dv.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$114.72</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4BGQmPN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S35a519ca629841d997227155f903a0166.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$19.22</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4MhDwyn" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa5218f841cd24ebd9dbd83d16810ea82D.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$18.43</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4LU8M8f" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6ac83cdf6a0d4251a78d45464e017fa0i.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$72.12</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3t2Wccf" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S69c91afa06fd4e9aa9d74543efe0811c3.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$83.79</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2IS5BWR" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S67a84fafcc1d4f4fbb968ab13f87d64ar.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$52.91</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4pIsyDZ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc13a4ba59fcc4d778a1f5f67fc8c17a3M.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$94.91</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3UlraJ5" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se9627efd8c604b9795d4c2e97d580058c.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$16.19</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3waIQ0P" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8509c84bdb064ffeb4974ea5721a3cc6j.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$20.69</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4exXz5d" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hdb088adef3d74b81b18b086aaddc6c12F.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$22.85</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4WPNL15" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se7ee630e134c49beab83e48eaa0ca9c9x.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$24.09</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3bNeeLV" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd3af1f3e8a844f92a13dc931e1bc37603.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$17.18</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3nN0ywL" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scd3ccb3dd9d64592a1a1daabf304823cG.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$20.66</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2JXQR3p" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S87b0b30f7d5a45bcb62e9378d736e1b8y.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$51.42</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3fCBR7v" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd4f201244ebc4e13b0c41c35f2668bccM.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$21.58</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3mrHdoF" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ha763f937dcba451c87686050bab002f1k.jpg" alt="Luxury Watch Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Watch Item</h3>
-                        <div class="product-price">$20.81</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3cSfQBH" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-            </div>
+    <div class="page-header">
+        <div class="container">
+            <h1>שעוני יוקרה</h1>
+            <p>זמן בסטייל - הקולקציה המובחרת שלנו</p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 StyleVault. All rights reserved.</p>
-        <p>Discover luxury. Embrace elegance.</p>
-        <div class="disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+    <div class="container">
+        <div class="page-breadcrumb">
+            <a href="../index.html">בית</a> / <span>שעונים</span>
+        </div>
+
+        <section class="products-section">
+            <div class="product-grid">
+                <!-- מוצרי שעונים -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="[Image of שעון יוקרה]">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">שעונים</span>
+                        <h3>שעון יד יוקרתי</h3>
+                        <p class="product-desc">עיצוב אלגנטי ודיוק מקסימלי לכל אירוע.</p>
+                        <div class="product-price">
+                            <span class="price-current">$67.63</span>
+                        </div>
+                        <a href="https://s.click.aliexpress.com/e/_c4eYSAnz" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3132723e16ed4eb7b62362e8cfbeca633.jpg" alt="[Image of שעון יוקרה]">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">שעונים</span>
+                        <h3>שעון סטייל מודרני</h3>
+                        <p class="product-desc">שילוב מושלם של טכנולוגיה ויופי.</p>
+                        <div class="product-price">
+                            <span class="price-current">$42.53</span>
+                        </div>
+                        <a href="https://s.click.aliexpress.com/e/_c4N60kCX" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                    </div>
+                </div>
+                <!-- ניתן להמשיך להוסיף את שאר המוצרים שלך כאן -->
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
+            </div>
         </div>
     </footer>
 </body>
