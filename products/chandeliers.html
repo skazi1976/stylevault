@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandeliers - StyleVault</title>
+    <title>Luxury Chandeliers - StyleVault | Elegant Lighting for Your Home</title>
+    <meta name="description" content="Discover our curated collection of luxury chandeliers at StyleVault. From crystal masterpieces to modern statement pieces, find the perfect chandelier to elevate your home decor.">
+    <meta name="keywords" content="luxury chandeliers, crystal chandeliers, modern chandeliers, elegant lighting, home decor, designer chandeliers, pendant lighting, statement lighting">
+    <meta property="og:title" content="Luxury Chandeliers - StyleVault">
+    <meta property="og:description" content="Explore stunning luxury chandeliers curated for elegance. Crystal, modern, and designer chandelier collections at StyleVault.">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,23 +18,24 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
             line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #3D3224 100%);
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 2px solid #e94560;
+            border-bottom: 2px solid #C9A96E;
         }
 
         header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #e94560;
+            color: #C9A96E;
             letter-spacing: 2px;
             font-weight: 700;
         }
@@ -37,7 +44,7 @@
             display: inline-block;
             margin: 20px 0;
             padding: 10px 20px;
-            background-color: #e94560;
+            background-color: #C9A96E;
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
@@ -45,18 +52,34 @@
         }
 
         .back-link:hover {
-            background-color: #ff6b7a;
+            background-color: #A67C52;
+        }
+
+        .article-link {
+            display: inline-block;
+            margin: 10px 0 0 0;
+            padding: 10px 20px;
+            color: #C9A96E;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #A67C52;
         }
 
         .page-title {
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 2em;
             margin-bottom: 10px;
-            color: #e94560;
+            color: #C9A96E;
         }
 
         .page-subtitle {
             font-size: 1.1em;
-            color: #b0b0b0;
+            color: #6B6B6B;
             margin-bottom: 30px;
         }
 
@@ -78,8 +101,8 @@
         }
 
         .product-card {
-            background-color: #16213e;
-            border: 1px solid #e94560;
+            background-color: #FAFAFA;
+            border: 1px solid #e8e8e8;
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -89,15 +112,15 @@
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-            border-color: #ff6b7a;
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.2);
+            border-color: #C9A96E;
         }
 
         .product-image {
             width: 100%;
             height: 240px;
             object-fit: cover;
-            background-color: #0a0a0a;
+            background-color: #f0f0f0;
         }
 
         .product-info {
@@ -109,7 +132,7 @@
 
         .product-title {
             font-size: 1em;
-            color: #ffffff;
+            color: #1A1A1A;
             margin-bottom: 10px;
             min-height: 2.4em;
             overflow: hidden;
@@ -121,7 +144,7 @@
 
         .product-price {
             font-size: 1.4em;
-            color: #e94560;
+            color: #C9A96E;
             font-weight: 700;
             margin-bottom: 15px;
         }
@@ -130,7 +153,7 @@
             display: inline-block;
             width: 100%;
             padding: 12px;
-            background-color: #e94560;
+            background-color: #C9A96E;
             color: #ffffff;
             text-align: center;
             text-decoration: none;
@@ -144,12 +167,21 @@
         }
 
         .shop-btn:hover {
-            background-color: #ff6b7a;
+            background-color: #A67C52;
+        }
+
+        .seo-text {
+            margin-top: 40px;
+            padding: 30px;
+            color: #6B6B6B;
+            font-size: 1em;
+            line-height: 1.8;
+            border-top: 1px solid #e8e8e8;
         }
 
         footer {
-            background-color: #16213e;
-            border-top: 1px solid #e94560;
+            background-color: #1A1A1A;
+            border-top: 1px solid #C9A96E;
             padding: 40px 20px;
             text-align: center;
             margin-top: 60px;
@@ -199,15 +231,15 @@
     </style>
 </head>
 <body>
-    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
+    <nav style="background:#FFFFFF;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid #e8e8e8;">
+        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#1A1A1A;font-family:'Playfair Display',Georgia,serif;"><span style="color:#C9A96E;">STYLE</span>VAULT</a>
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
-            <a href="jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
-            <a href="handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
-            <a href="watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
-            <a href="bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
-            <a href="wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
+            <a href="chandeliers.html" style="color:#1A1A1A;text-decoration:none;">Chandeliers</a>
+            <a href="jewelry.html" style="color:#1A1A1A;text-decoration:none;">Jewelry</a>
+            <a href="handbags.html" style="color:#1A1A1A;text-decoration:none;">Handbags</a>
+            <a href="watches.html" style="color:#1A1A1A;text-decoration:none;">Watches</a>
+            <a href="bedding.html" style="color:#1A1A1A;text-decoration:none;">Bedding</a>
+            <a href="wall-art.html" style="color:#1A1A1A;text-decoration:none;">Wall Art</a>
         </div>
     </nav>
     <header>
@@ -215,11 +247,12 @@
     </header>
 
     <div class="container">
-        <a href="../index.html" class="back-link">← Back to Home</a>
-        
+        <a href="../index.html" class="back-link">&#8592; Back to Home</a>
+        <a href="../articles/chandelier-guide.html" class="article-link">&#128214; Read our Chandelier Buying Guide &#8594;</a>
+
         <div class="products-section">
             <h2 class="page-title">Chandeliers</h2>
-            <p class="page-subtitle">Explore our curated collection of Chandelier</p>
+            <p class="page-subtitle">Explore our curated collection of luxury chandeliers</p>
 
             <div class="products-grid">
                 <div class="product-card">
@@ -462,6 +495,10 @@
                         <a href="https://s.click.aliexpress.com/e/_c33bL4Xl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="seo-text">
+                <p>Transform your living spaces with our handpicked selection of luxury chandeliers. Whether you prefer the timeless sparkle of crystal designs or the clean lines of contemporary fixtures, our collection offers statement lighting pieces that serve as the centerpiece of any room. Each chandelier is selected for its exceptional craftsmanship, quality materials, and ability to create an atmosphere of refined elegance in your home.</p>
             </div>
         </div>
     </div>

@@ -4,238 +4,467 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StyleVault - Luxury Finds at Unbeatable Prices</title>
-    <meta name="description" content="Discover curated luxury home decor, jewelry, handbags and watches. Premium quality at affordable prices. Free worldwide shipping.">
-    <meta name="keywords" content="luxury home decor, crystal chandelier, gold jewelry set, designer handbag, luxury watches, affordable luxury, home decoration ideas, luxury bedding, wall art, fashion accessories">
+    <meta name="description" content="Discover luxury home decor, designer-inspired jewelry, elegant handbags, premium watches, sophisticated bedding, and stunning wall art at unbeatable prices. StyleVault curates the finest affordable luxury finds with free worldwide shipping.">
+    <meta name="keywords" content="luxury home decor, crystal chandeliers, gold jewelry, designer handbags, luxury watches, premium bedding, wall art, affordable luxury, curated collections, free shipping, home decoration, fashion accessories, elegant lighting, silk bedding sets">
+
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="StyleVault - Luxury Finds at Unbeatable Prices">
-    <meta property="og:description" content="Curated luxury home decor, jewelry & fashion. Premium quality, affordable prices. Free worldwide shipping.">
+    <meta property="og:description" content="Discover handpicked luxury home decor, designer-inspired jewelry, elegant handbags, premium watches, and more — all at prices that won't break the bank. Free worldwide shipping.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg">
-    <meta property="og:url" content="https://skazi1976.github.io/stylevault/">
+    <meta property="og:url" content="https://stylevault.com/">
+
+    <!-- Pinterest Verification -->
     <meta name="p:domain_verify" content="">
+
+    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="StyleVault - Luxury Finds at Unbeatable Prices">
-    <meta name="twitter:description" content="Curated luxury home decor, jewelry & fashion. Premium quality, affordable prices.">
+    <meta name="twitter:description" content="Curated luxury home decor, jewelry, handbags, watches, bedding, and wall art at unbeatable prices. Free worldwide shipping on every order.">
+    <meta name="twitter:image" content="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0a0a; color: #ffffff; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%); padding: 60px 20px; text-align: center; border-bottom: 2px solid #e94560; }
-        header h1 { font-size: 3.5em; margin-bottom: 10px; color: #e94560; letter-spacing: 2px; font-weight: 700; }
-        header p { font-size: 1.3em; color: #b0b0b0; font-style: italic; }
-        .hero-section { background: linear-gradient(180deg, rgba(25,45,85,0.2) 0%, rgba(10,10,10,1) 100%); padding: 50px 20px; text-align: center; border-bottom: 1px solid #e94560; }
-        .hero-section h2 { font-size: 2.2em; margin-bottom: 15px; color: #e94560; }
-        .hero-section p { font-size: 1.1em; color: #b0b0b0; max-width: 800px; margin: 0 auto 20px; }
-        .hero-cta { margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn { display: inline-block; padding: 14px 32px; border-radius: 5px; text-decoration: none; font-weight: 600; font-size: 1em; transition: all 0.3s ease; }
-        .btn-primary { background-color: #e94560; color: #fff; border: 2px solid #e94560; }
-        .btn-primary:hover { background-color: #ff6b7a; border-color: #ff6b7a; }
-        .btn-outline { background: transparent; color: #e94560; border: 2px solid #e94560; }
-        .btn-outline:hover { background-color: #e94560; color: #fff; }
-        .trust-bar { background-color: #16213e; padding: 25px 20px; border-bottom: 1px solid rgba(233,69,96,0.3); }
-        .trust-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-        .trust-item { display: flex; align-items: center; justify-content: center; gap: 10px; color: #b0b0b0; font-size: 0.95em; }
-        .trust-icon { font-size: 1.3em; color: #e94560; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
-        .section-title { font-size: 2em; color: #e94560; text-align: center; margin-bottom: 10px; }
-        .section-subtitle { text-align: center; color: #b0b0b0; font-size: 1.1em; margin-bottom: 30px; }
-        .categories-section { padding: 60px 20px; }
-        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .category-card { background-color: #16213e; border: 1px solid #e94560; border-radius: 8px; overflow: hidden; transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; }
-        .category-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(233,69,96,0.3); border-color: #ff6b7a; }
-        .category-card-image { width: 100%; height: 250px; object-fit: cover; background-color: #0a0a0a; }
-        .category-card-content { padding: 30px; text-align: center; }
-        .category-card-content h3 { font-size: 1.8em; color: #e94560; margin-bottom: 10px; }
-        .category-card-content p { color: #b0b0b0; font-size: 0.95em; }
-        .category-card-content .shop-link { display: inline-block; margin-top: 12px; color: #e94560; font-weight: 600; }
-        .category-card-content::after { content: ''; display: block; width: 50px; height: 2px; background-color: #e94560; margin: 15px auto 0; }
-        .why-section { padding: 60px 20px; background-color: #0d1117; }
-        .why-grid { max-width: 1200px; margin: 30px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .why-item { background-color: #16213e; padding: 30px; border-radius: 8px; text-align: center; border: 1px solid rgba(233,69,96,0.2); transition: all 0.3s ease; }
-        .why-item:hover { border-color: #e94560; transform: translateY(-3px); }
-        .why-icon { font-size: 2.5em; margin-bottom: 15px; }
-        .why-item h3 { color: #e94560; font-size: 1.3em; margin-bottom: 10px; }
-        .why-item p { color: #b0b0b0; font-size: 0.9em; line-height: 1.7; }
-        .seo-section { padding: 50px 20px; text-align: center; }
-        .seo-section p { color: #888; font-size: 0.95em; max-width: 900px; margin: 0 auto 15px; line-height: 1.8; }
-        footer { background-color: #16213e; border-top: 1px solid #e94560; padding: 50px 20px 30px; margin-top: 60px; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
-        .footer-col h4 { color: #e94560; margin-bottom: 15px; font-size: 1.1em; }
-        .footer-col p { color: #b0b0b0; font-size: 0.9em; line-height: 1.7; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 8px; }
-        .footer-col ul li a { color: #b0b0b0; text-decoration: none; font-size: 0.9em; transition: color 0.3s; }
-        .footer-col ul li a:hover { color: #e94560; }
-        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(233,69,96,0.2); }
-        .footer-bottom p { color: #b0b0b0; font-size: 0.9em; margin-bottom: 10px; }
-        .disclosure { color: #888888; font-size: 0.85em; margin-top: 15px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        @media (max-width: 768px) { header h1 { font-size: 2.5em; } .categories-grid { grid-template-columns: 1fr; } .hero-section h2 { font-size: 1.5em; } }
+        /* Articles Section */
+        .articles-section {
+            padding: 80px 0;
+            background-color: var(--cream);
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .article-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .article-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .article-card-content {
+            padding: 24px;
+        }
+        .article-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--black);
+            line-height: 1.3;
+        }
+        .article-card-content p {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .article-card-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .article-card-link:hover {
+            color: var(--gold-dark);
+        }
+
+        /* SEO Section */
+        .seo-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        .seo-section .container {
+            max-width: 900px;
+        }
+        .seo-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .seo-section p {
+            font-size: 0.92rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        /* Responsive for articles */
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-        <a href="index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
-        <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="products/chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
-            <a href="products/jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
-            <a href="products/handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
-            <a href="products/watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
-            <a href="products/bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
-            <a href="products/wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="/" class="logo"><span class="logo-icon">&#9670;</span> StyleVault</a>
+            <ul class="nav-links">
+                <li><a href="products/chandeliers.html">Chandeliers</a></li>
+                <li><a href="products/jewelry.html">Jewelry</a></li>
+                <li><a href="products/handbags.html">Handbags</a></li>
+                <li><a href="products/watches.html">Watches</a></li>
+                <li><a href="products/bedding.html">Bedding</a></li>
+                <li><a href="products/wall-art.html">Wall Art</a></li>
+                <li><a href="#articles">Articles</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <span>&#9776;</span>
+            </button>
         </div>
     </nav>
-    <header>
-        <h1>StyleVault</h1>
-        <p>Curated Luxury Finds at Unbeatable Prices</p>
-    </header>
-    <div class="hero-section">
-        <h2>Elevate Your Style Without Breaking the Bank</h2>
-        <p>Handpicked premium home decor, jewelry & fashion finds &#8212; carefully selected for quality, style, and value. From stunning crystal chandeliers to elegant gold jewelry sets, designer-inspired handbags, and sophisticated watches.</p>
-        <p>Whether you are redecorating your home or upgrading your personal style, StyleVault brings you luxury items that look and feel premium &#8212; without the designer price tag.</p>
-        <div class="hero-cta">
-            <a href="#categories" class="btn btn-primary">Explore Collections</a>
-            <a href="#why-us" class="btn btn-outline">Why StyleVault?</a>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">CURATED LUXURY, UNBEATABLE PRICES</p>
+                <h1>Elevate Your Style<br>Without Breaking the Bank</h1>
+                <p class="hero-text">We handpick the most stunning premium finds from around the world — designer-inspired jewelry, elegant home decor, luxurious bedding, and sophisticated accessories — so you can enjoy the finer things in life without the extravagant price tag.</p>
+                <div class="hero-cta">
+                    <a href="#categories" class="btn btn-primary">Explore Collections</a>
+                    <a href="#articles" class="btn btn-outline">Read Our Guides</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- TRUST BAR -->
     <section class="trust-bar">
-        <div class="trust-grid">
-            <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Free Worldwide Shipping</span></div>
-            <div class="trust-item"><span class="trust-icon">&#9733;</span><span>Top-Rated Products Only</span></div>
-            <div class="trust-item"><span class="trust-icon">&#128176;</span><span>Best Price Guaranteed</span></div>
-            <div class="trust-item"><span class="trust-icon">&#128274;</span><span>Buyer Protection</span></div>
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">&#10003;</span>
+                    <span>Free Worldwide Shipping</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">&#9733;</span>
+                    <span>Top-Rated Products Only</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">&#128176;</span>
+                    <span>Best Price Guaranteed</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">&#128274;</span>
+                    <span>Buyer Protection</span>
+                </div>
+            </div>
         </div>
     </section>
-    <div class="container" id="categories">
-        <div class="categories-section">
-            <h2 class="section-title">Our Curated Collections</h2>
-            <p class="section-subtitle">Luxury finds, expertly curated for your home and wardrobe</p>
-            <div class="categories-grid">
+
+    <!-- CATEGORIES -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <p class="section-subtitle">Browse our expertly curated categories of luxury finds</p>
+            <div class="category-grid">
+
                 <a href="products/chandeliers.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Luxury Crystal Chandeliers - Modern LED Lighting Fixtures for Home" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Luxury crystal chandeliers and modern pendant lighting for elegant home decor" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Chandeliers</h3>
-                        <p>Stunning crystal and modern LED lighting fixtures to elevate any room. Transform your dining room, living room, or bedroom with statement lighting.</p>
-                        <span class="shop-link">Shop Chandeliers &rarr;</span>
+                        <p>Transform any room with our stunning collection of luxury crystal chandeliers and modern pendant lights. From grand foyer centerpieces to elegant dining room fixtures, find the perfect statement lighting to elevate your home decor and create a warm, inviting ambiance.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
+
                 <a href="products/jewelry.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Gold Jewelry Sets - Elegant Necklace Earrings Bracelet Collections" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Elegant gold jewelry sets with necklaces, earrings, and bracelets" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Jewelry</h3>
-                        <p>Elegant gold-plated jewelry sets featuring necklaces, earrings, bracelets, and rings. Perfect for weddings, parties, and everyday luxury.</p>
-                        <span class="shop-link">Shop Jewelry &rarr;</span>
+                        <p>Discover exquisite gold and silver jewelry that rivals high-end designer pieces at a fraction of the cost. Our curated selection includes statement necklaces, elegant earrings, and timeless bracelets perfect for weddings, parties, and everyday luxury.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
+
                 <a href="products/handbags.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Designer Style Handbags - Premium Leather Crossbody and Tote Bags" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Designer-inspired luxury handbags, crossbody bags, and tote bags" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Handbags</h3>
-                        <p>Designer-inspired handbags and crossbody bags crafted from premium materials. Timeless accessories that complement every outfit and occasion.</p>
-                        <span class="shop-link">Shop Handbags &rarr;</span>
+                        <p>Carry yourself with confidence with our collection of designer-inspired handbags, crossbody bags, and luxury totes. Crafted with premium materials and impeccable attention to detail, these bags deliver high-end style without the designer price tag.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
+
                 <a href="products/watches.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Luxury Watches - Sophisticated Timepieces for Men and Women" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Premium luxury watches with automatic movements for men and women" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Watches</h3>
-                        <p>Sophisticated timepieces featuring stainless steel construction, precise quartz movements, and elegant diamond-accented dials for the discerning collector.</p>
-                        <span class="shop-link">Shop Watches &rarr;</span>
+                        <p>Make every second count with our premium watch collection featuring automatic movements, sapphire crystal faces, and stainless steel construction. From classic dress watches to sporty chronographs, find your perfect timepiece at an unbeatable price.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
+
                 <a href="products/bedding.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Luxury Bedding Sets - Silk and Satin Premium Bed Linens" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Luxury silk and Egyptian cotton bedding sets and duvet covers" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Bedding</h3>
-                        <p>Luxury silk and satin bedding sets that transform your bedroom into a five-star retreat. Premium comfort for the ultimate sleeping experience.</p>
-                        <span class="shop-link">Shop Bedding &rarr;</span>
+                        <p>Indulge in hotel-quality luxury bedding sets featuring silky smooth Egyptian cotton, elegant embroidery, and sophisticated designs. Transform your bedroom into a five-star retreat with our premium duvet covers, sheet sets, and decorative pillows.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
+
                 <a href="products/wall-art.html" class="category-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall Art and Canvas Prints - Modern Home Decor Paintings" class="category-card-image">
-                    <div class="category-card-content">
+                    <div class="category-image" style="background-image: url('https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg');">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Modern wall art, abstract canvas paintings, and contemporary home wall decor" loading="lazy" style="display:none;">
+                    </div>
+                    <div class="category-info">
                         <h3>Wall Art</h3>
-                        <p>Artistic canvas prints and wall decor to inspire your space. From abstract modern art to landscape paintings, find the perfect piece for every room.</p>
-                        <span class="shop-link">Shop Wall Art &rarr;</span>
+                        <p>Elevate your walls with museum-quality art prints, abstract canvas paintings, and contemporary wall sculptures. Our curated wall art collection features pieces that add personality, depth, and sophistication to any living space.</p>
+                        <span class="category-link">Shop Now &#8594;</span>
                     </div>
                 </a>
-            </div>
-        </div>
-    </div>
-    <section class="why-section" id="why-us">
-        <h2 class="section-title">Why Choose StyleVault?</h2>
-        <p class="section-subtitle">Smart luxury shopping made easy</p>
-        <div class="why-grid">
-            <div class="why-item">
-                <div class="why-icon">&#128269;</div>
-                <h3>Expertly Curated</h3>
-                <p>We review hundreds of products to bring you only the best. Every item on StyleVault meets our strict quality and style standards before being featured.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-icon">&#128184;</div>
-                <h3>Unbeatable Prices</h3>
-                <p>Get luxury-quality home decor, jewelry, and fashion items at a fraction of retail prices. Same premium materials, same stunning style &#8212; smarter shopping.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-icon">&#128666;</div>
-                <h3>Free Worldwide Shipping</h3>
-                <p>All featured products ship free to your door, anywhere in the world. Track your order every step of the way with full delivery transparency.</p>
-            </div>
-            <div class="why-item">
-                <div class="why-icon">&#128274;</div>
-                <h3>Buyer Protection</h3>
-                <p>Shop with confidence. Every purchase through our recommended sellers is protected with a full refund guarantee if items don't arrive or match their description.</p>
+
             </div>
         </div>
     </section>
+
+    <!-- STYLE GUIDES & INSPIRATION -->
+    <section class="articles-section" id="articles">
+        <div class="container">
+            <h2 class="section-title">Style Guides &amp; Inspiration</h2>
+            <p class="section-subtitle">Expert tips and curated guides to help you style your life beautifully</p>
+            <div class="articles-grid">
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="How to choose the perfect chandelier for your home" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>How to Choose the Perfect Chandelier</h3>
+                        <p>From sizing and placement to crystal types and lighting ambiance, learn everything you need to know to find the ideal chandelier for your space.</p>
+                        <a href="articles/chandelier-guide.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Gold jewelry trends and styling tips for every occasion" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Gold Jewelry Trends: Styling Guide</h3>
+                        <p>Discover the hottest gold jewelry trends and learn how to layer, stack, and style pieces for effortlessly chic looks that turn heads.</p>
+                        <a href="articles/jewelry-trends.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="The ultimate handbag buying and styling guide" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>The Ultimate Handbag Guide</h3>
+                        <p>Navigate the world of handbags like a pro. Learn about materials, construction quality, and how to pick the perfect bag for every occasion.</p>
+                        <a href="articles/handbag-guide.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Luxury watch buying guide for beginners and collectors" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Luxury Watch Buying Guide</h3>
+                        <p>Understand movements, materials, and what makes a great timepiece. Our comprehensive guide helps you find the perfect watch within your budget.</p>
+                        <a href="articles/watch-buying-guide.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Transform your bedroom into a luxury retreat with premium bedding" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Transform Your Bedroom Into a Retreat</h3>
+                        <p>Create a serene, hotel-inspired bedroom sanctuary with the right bedding, textures, and color palette. Simple upgrades that make a big difference.</p>
+                        <a href="articles/bedroom-luxury.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall art ideas and gallery wall arrangement tips for modern homes" class="article-card-image" loading="lazy">
+                    <div class="article-card-content">
+                        <h3>Wall Art Ideas: Gallery Wall Tips</h3>
+                        <p>Master the art of creating a stunning gallery wall. Learn about spacing, framing, and how to curate a cohesive collection that tells your story.</p>
+                        <a href="articles/wall-art-ideas.html" class="article-card-link">Read More &#8594;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Shop With StyleVault</h2>
+            <p class="section-subtitle">We go above and beyond to bring you the best luxury shopping experience</p>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon">&#128269;</div>
+                    <h3>Expertly Curated</h3>
+                    <p>Every product in our collection is personally reviewed and handpicked by our team of style experts. We sift through thousands of items so you only see the very best — premium quality, elegant design, and outstanding value in every piece we recommend.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">&#128142;</div>
+                    <h3>Unbeatable Prices</h3>
+                    <p>Why pay designer markups for the same level of craftsmanship? We connect you directly with top-rated manufacturers and trusted sellers, cutting out the middlemen so you enjoy luxury-grade products at a fraction of traditional retail prices.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">&#128666;</div>
+                    <h3>Free Worldwide Shipping</h3>
+                    <p>No matter where you are in the world, enjoy free shipping on every order. We partner with reliable international carriers to ensure your luxury finds arrive safely at your doorstep, with tracking available every step of the way.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon">&#128737;</div>
+                    <h3>Buyer Protection</h3>
+                    <p>Shop with complete peace of mind. Every purchase is backed by comprehensive buyer protection, including secure payment processing, money-back guarantees, and dedicated customer support to ensure your satisfaction with every order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO SECTION -->
     <section class="seo-section">
-        <h2 class="section-title">Discover Luxury for Less</h2>
-        <p>StyleVault is your ultimate destination for affordable luxury home decor and fashion accessories. We curate the finest crystal chandeliers, gold jewelry sets, designer-style handbags, luxury watches, premium bedding, and stunning wall art &#8212; all at prices that make luxury accessible to everyone.</p>
-        <p>Our collections are perfect for home decorating enthusiasts, fashion lovers, gift shoppers, and anyone who appreciates quality without overpaying. Whether you are looking for a statement chandelier for your dining room, an elegant jewelry set for a special occasion, or the perfect handbag to complete your look &#8212; StyleVault has you covered.</p>
-        <p>Every product featured on StyleVault is hand-selected based on customer reviews, material quality, and overall value. We believe everyone deserves beautiful things, and our mission is to make luxury living attainable for all.</p>
+        <div class="container">
+            <h2>Your Destination for Affordable Luxury</h2>
+            <p>StyleVault is your trusted online destination for discovering premium, luxury-inspired products at prices that make sense. We believe that everyone deserves to surround themselves with beautiful things — from dazzling crystal chandeliers that transform a dining room into an elegant showcase, to gold jewelry that adds the perfect finishing touch to any outfit. Our team scours the globe to find the finest home decor, fashion accessories, and lifestyle products that deliver genuine quality without the inflated price tags of traditional luxury retailers.</p>
+            <p>Our carefully curated collections span six signature categories: statement chandeliers and pendant lighting for sophisticated interiors, exquisite gold and silver jewelry for everyday elegance, designer-inspired handbags crafted with premium materials, precision-engineered watches with automatic movements and sapphire crystals, hotel-quality bedding sets in Egyptian cotton and silk, and museum-worthy wall art that brings personality to any space. Each product is vetted for quality, design, and value before earning a place in the StyleVault collection.</p>
+            <p>At StyleVault, our mission goes beyond simply offering affordable luxury products. We are committed to empowering shoppers with expert style guides, trend reports, and buying advice that help you make confident purchasing decisions. Whether you are redecorating your living room, building a capsule jewelry collection, or searching for the perfect gift, our in-depth articles and curated recommendations are designed to inspire and inform. Join thousands of savvy shoppers who have discovered that true style does not require a fortune — it just requires knowing where to look.</p>
+        </div>
     </section>
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4><span style="color:#e94560;">STYLE</span>VAULT</h4>
-                <p>Your trusted source for curated luxury finds at unbeatable prices. We handpick every item to ensure quality, style, and incredible value for our community of smart shoppers.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Collections</h4>
-                <ul>
-                    <li><a href="products/chandeliers.html">Crystal Chandeliers</a></li>
-                    <li><a href="products/jewelry.html">Gold Jewelry Sets</a></li>
-                    <li><a href="products/handbags.html">Designer Handbags</a></li>
-                    <li><a href="products/watches.html">Luxury Watches</a></li>
-                    <li><a href="products/bedding.html">Premium Bedding</a></li>
-                    <li><a href="products/wall-art.html">Wall Art & Canvas</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Popular Searches</h4>
-                <ul>
-                    <li><a href="products/chandeliers.html">Modern LED Chandeliers</a></li>
-                    <li><a href="products/jewelry.html">Wedding Jewelry Sets</a></li>
-                    <li><a href="products/handbags.html">Crossbody Bags</a></li>
-                    <li><a href="products/watches.html">Diamond Watches</a></li>
-                    <li><a href="products/bedding.html">Silk Bedding Sets</a></li>
-                    <li><a href="products/wall-art.html">Abstract Wall Art</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>About</h4>
-                <ul>
-                    <li><a href="#">Home Decor Ideas</a></li>
-                    <li><a href="#">Style Inspiration</a></li>
-                    <li><a href="#">Gift Guides</a></li>
-                    <li><a href="#">About StyleVault</a></li>
-                </ul>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get Exclusive Deals</h2>
+                <p>Join over 25,000 smart shoppers who receive our weekly picks of the best luxury finds, secret sales, and style tips delivered straight to their inbox. Be the first to know about new arrivals and limited-time offers.</p>
+                <form class="newsletter-form" action="#" method="post">
+                    <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 StyleVault. All rights reserved.</p>
-            <p>Discover luxury. Embrace elegance. Shop smart.</p>
-            <div class="disclosure">
-                <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><span class="logo-icon">&#9670;</span> StyleVault</h4>
+                    <p>Your curated destination for affordable luxury. We handpick the finest home decor, jewelry, fashion accessories, and lifestyle products from around the world, delivering premium quality at unbeatable prices with free worldwide shipping on every order.</p>
+                </div>
+                <div>
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products/chandeliers.html">Chandeliers</a></li>
+                        <li><a href="products/jewelry.html">Jewelry</a></li>
+                        <li><a href="products/handbags.html">Handbags</a></li>
+                        <li><a href="products/watches.html">Watches</a></li>
+                        <li><a href="products/bedding.html">Bedding</a></li>
+                        <li><a href="products/wall-art.html">Wall Art</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Style Guides</h4>
+                    <ul>
+                        <li><a href="articles/chandelier-guide.html">Chandelier Guide</a></li>
+                        <li><a href="articles/jewelry-trends.html">Jewelry Trends</a></li>
+                        <li><a href="articles/handbag-guide.html">Handbag Guide</a></li>
+                        <li><a href="articles/watch-buying-guide.html">Watch Buying Guide</a></li>
+                        <li><a href="articles/bedroom-luxury.html">Bedroom Luxury</a></li>
+                        <li><a href="articles/wall-art-ideas.html">Wall Art Ideas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Popular Searches</h4>
+                    <ul>
+                        <li><a href="products/chandeliers.html">Crystal Chandelier Lighting</a></li>
+                        <li><a href="products/jewelry.html">Gold Plated Jewelry Sets</a></li>
+                        <li><a href="products/handbags.html">Designer Crossbody Bags</a></li>
+                        <li><a href="products/watches.html">Automatic Luxury Watches</a></li>
+                        <li><a href="products/bedding.html">Egyptian Cotton Bedding</a></li>
+                        <li><a href="products/wall-art.html">Abstract Canvas Wall Art</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 StyleVault. All rights reserved. | Luxury for Less, Curated for You.</p>
+                <p class="affiliate-disclosure">Affiliate Disclosure: StyleVault is a participant in affiliate advertising programs. When you click on links to products and make a purchase, we may earn a commission at no additional cost to you. This helps us continue to curate the best luxury finds and provide free style guides. All opinions and product selections are our own.</p>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        var menuToggle = document.querySelector('.menu-toggle');
+        var navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when a nav link is clicked
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    var navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
