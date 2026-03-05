@@ -1,64 +1,476 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תכשיטים - StyleVault</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Jewelry - StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #e94560;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6b7a;
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .page-subtitle {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .products-section {
+            padding: 40px 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: #16213e;
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            min-height: 2.4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-price {
+            font-size: 1.4em;
+            color: #e94560;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .shop-btn:hover {
+            background-color: #ff6b7a;
+        }
+
+        footer {
+            background-color: #16213e;
+            border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 150px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-price {
+                font-size: 1.1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
-            <ul class="nav-links">
-                <li><a href="chandeliers.html">נברשות</a></li>
-                <li><a href="jewelry.html">תכשיטים</a></li>
-                <li><a href="handbags.html">תיקים</a></li>
-                <li><a href="watches.html">שעונים</a></li>
-                <li><a href="bedding.html">מצעים</a></li>
-                <li><a href="wall-art.html">אמנות קיר</a></li>
-            </ul>
+    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+            <a href="chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
+            <a href="jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
+            <a href="handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
+            <a href="watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
+            <a href="bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
+            <a href="wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
         </div>
     </nav>
-
-    <div class="page-header">
-        <div class="container">
-            <h1>תכשיטים יוקרתיים</h1>
-            <p>נגיעה של ניצוץ לכל הופעה</p>
-        </div>
-    </div>
+    <header>
+        <h1>StyleVault</h1>
+    </header>
 
     <div class="container">
-        <div class="page-breadcrumb">
-            <a href="../index.html">בית</a> / <span>תכשיטים</span>
-        </div>
+        <a href="../index.html" class="back-link">← Back to Home</a>
+        
+        <div class="products-section">
+            <h2 class="page-title">Jewelry</h2>
+            <p class="page-subtitle">Explore our curated collection of Jewelry</p>
 
-        <section class="products-section">
-            <div class="product-grid">
+            <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="">
-                    </div>
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Luxury Jewelry Item" class="product-image">
                     <div class="product-info">
-                        <span class="product-category">תכשיטים</span>
-                        <h3>עגילי יהלום אלגנטיים</h3>
-                        <p class="product-desc">עיצוב קלאסי שמושך את כל המבטים.</p>
-                        <div class="product-price">
-                            <span class="price-current">$36.55</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c40MNy3V" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$36.55</div>
+                        <a href="https://s.click.aliexpress.com/e/_c40MNy3V" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A5fa499eb0eb04d74ad5740aeb4f11777Y.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$22.14</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3jJBw91" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se8abbf4bda2743a58218a6f424ffd82bs.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$23.89</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3ObVzer" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S61f2a9332e434907bcd2b6432da898fap.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$24.50</div>
+                        <a href="https://s.click.aliexpress.com/e/_c33CGQph" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8720385bcec54cdcafa61ec5ffd2fdd5U.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$36.44</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3CmdRNl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd97b7f2ec1dc44788d49f18424a5b3f6C.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$27.39</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3D3fvDN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6d06cbf98170467eba3e52a73dc373e1l.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$20.61</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3QhIvSB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Seb5ad9e9b4894ccf9799b2814d52b02dw.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$22.47</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4F8Xuq7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2305aadb8b0446c092485524c7f0697bQ.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$7.08</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2x35aYX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sabad46535c574afe9656ed0fed1920e5S.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$18.96</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4qXsJFp" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd18d2509c7e4470a9977f39572c93194P.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$12.42</div>
+                        <a href="https://s.click.aliexpress.com/e/_c41SDHzH" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S51be807b4abd4ba1af72593c7ab740d7W.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$20.53</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4518zOR" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0717634b867647b4baeff519911682e7n.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$25.88</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2ysQw4J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A27151da74a1842cbadf5a9704319dfc21.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$23.91</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3Yyqxux" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8085d1be852451b975b1f96dd660a884.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$26.31</div>
+                        <a href="https://s.click.aliexpress.com/e/_c34m0Jyb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb9d022d9fb8043d08631cf78c0177e1ep.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$22.61</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4LoxoF5" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A32e071bd26704b989f053ed78bd95ddck.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$24.80</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4dLL2SF" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S65ac928ba34e4b309577a0ddda943573q.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$23.28</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3kHYsNp" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ab9842cde7466407097de7009d50f4b152.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$22.02</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2RwJtY7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa107f348848b496fbdef590ad66e5b5da.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$21.79</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3TgGng7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0da2210596a54580bde7825ef60f894c0.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$12.90</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3lx42D1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6d7346f5c2ca40fc998a8ffd9751ee2fb.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$31.16</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3u0639V" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scb01b01560ae458893ed24e7507cf546L.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$25.01</div>
+                        <a href="https://s.click.aliexpress.com/e/_c39Vv4uR" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sac7eadd4973f4ceeb985efdc6e383588P.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$19.46</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3rgtrpH" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S45bacf2127654858bb362bbb6a68bcbaK.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$37.00</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3baT34x" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc8a976c07b4a4f4d80f81ee36be934c9a.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$30.46</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4WF8mzv" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdaa3220b1eb54f17823f419c4055a275A.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$4.56</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4oqkpqf" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/A32e071bd26704b989f053ed78bd95ddck.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$24.23</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3sIdoyB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7e6dd770b243494dbc6b89861f4fe2e7t.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$20.59</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3S7EqeL" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa31cadca47a44d62ae3d991e62c5ba5fk.jpg" alt="Luxury Jewelry Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jewelry Item</h3>
+                        <div class="product-price">$9.98</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3A7VmVp" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
-            </div>
+    <footer>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
         </div>
     </footer>
 </body>

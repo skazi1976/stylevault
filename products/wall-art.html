@@ -1,64 +1,476 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>אמנות קיר - StyleVault</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Wall Art - StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #e94560;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #ff6b7a;
+        }
+
+        .page-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e94560;
+        }
+
+        .page-subtitle {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .products-section {
+            padding: 40px 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background-color: #16213e;
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+            border-color: #ff6b7a;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            min-height: 2.4em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-price {
+            font-size: 1.4em;
+            color: #e94560;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #e94560;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .shop-btn:hover {
+            background-color: #ff6b7a;
+        }
+
+        footer {
+            background-color: #16213e;
+            border-top: 1px solid #e94560;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #b0b0b0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .disclosure {
+            color: #888888;
+            font-size: 0.85em;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .page-title {
+                font-size: 1.5em;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 150px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-price {
+                font-size: 1.1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
-            <ul class="nav-links">
-                <li><a href="chandeliers.html">נברשות</a></li>
-                <li><a href="jewelry.html">תכשיטים</a></li>
-                <li><a href="handbags.html">תיקים</a></li>
-                <li><a href="watches.html">שעונים</a></li>
-                <li><a href="bedding.html">מצעים</a></li>
-                <li><a href="wall-art.html">אמנות קיר</a></li>
-            </ul>
+    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
+        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+            <a href="chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
+            <a href="jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
+            <a href="handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
+            <a href="watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
+            <a href="bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
+            <a href="wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
         </div>
     </nav>
-
-    <div class="page-header">
-        <div class="container">
-            <h1>אמנות קיר</h1>
-            <p>יצירות שנותנות נשמה לבית</p>
-        </div>
-    </div>
+    <header>
+        <h1>StyleVault</h1>
+    </header>
 
     <div class="container">
-        <div class="page-breadcrumb">
-            <a href="../index.html">בית</a> / <span>אמנות קיר</span>
-        </div>
+        <a href="../index.html" class="back-link">← Back to Home</a>
+        
+        <div class="products-section">
+            <h2 class="page-title">Wall Art</h2>
+            <p class="page-subtitle">Explore our curated collection of Wall Art</p>
 
-        <section class="products-section">
-            <div class="product-grid">
+            <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="">
-                    </div>
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Luxury Wall Art Item" class="product-image">
                     <div class="product-info">
-                        <span class="product-category">אמנות</span>
-                        <h3>תמונת קנבס מופשטת</h3>
-                        <p class="product-desc">יצירה מודרנית להוספת צבע ויוקרה לחלל.</p>
-                        <div class="product-price">
-                            <span class="price-current">$17.18</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3rvkGmb" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.18</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3rvkGmb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfd1a5df07a0241059c78c845bbcad318Q.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$25.12</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4LtA9B1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd379eb7840044c859f5bfdb92a8e431bn.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.47</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4W4P7wB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6f63deb85d03430086b6e3d36ddb57bde.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.33</div>
+                        <a href="https://s.click.aliexpress.com/e/_c39A8hHl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa2c9093081704d6c83975edbe1a4752dZ.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.16</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3bFqgpD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9f9d760acc434647932b3cd5fe3f0155t.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$60.53</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3kQLHtN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb021bf4f95a94437ac1dc17af8ae71e0K.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$18.52</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4oOzA2x" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sed01c48fe00a4ca2be62a2720e83cd50x.png" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$40.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3uZNgZh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S27182974a9574771b66294774be9b4b2F.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$19.85</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3SjxjaX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6dfbb344b7334a9fb844ded5d8cb4740S.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$38.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3AGs71N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd976fb6f4f7448399b9b4b1aabae8f71I.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.67</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3sQI9u3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9d090bca50074e6a8e26b5cc5e9dcce5C.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$3.65</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4dUmfOr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdaa2ce9153f34257baf975b3b020f2e3O.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.69</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3TvX88J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S466079ba83fe410b90c873252401285bu.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.39</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3meBfd9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5362bb95229344899761d0c4f3c016a8q.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.42</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3vfD6qb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa859c05eae8d4dfcafd88c4f35413025S.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.04</div>
+                        <a href="https://s.click.aliexpress.com/e/_c40zgfQr" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5283b9fa462147238904e9875f4c97d8T.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.58</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3DHc8Gn" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S446f02f335b640269ab8303878f6b35aJ.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$3.66</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3CfsjDz" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3d498a4be2de41488103645b82a7468fh.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.22</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4rE76Ib" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb84e21f1ded84e56b10c8a31e5864b81d.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.59</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4knw8bN" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S918a2397df8e42c98e513453f01f9834r.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$16.82</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3ZPZfV9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S44381c21e2ca44bdbf050a4cd9688a035.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$21.85</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3R5F9mJ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Scd92c575de9c402fb6b34f48145dece8E.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$17.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4aKHWvD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1dd20656399942d2a082a0227dd101aft.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$23.76</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2xGXG5t" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sccc7c08de3d245738a27a2b41743153a8.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$18.15</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3GKKAK3" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/U077fe2a851974b1780a21afc5539f846k.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$34.00</div>
+                        <a href="https://s.click.aliexpress.com/e/_c3OUughD" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa740be61f51948769ee4fc135e79c372G.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$34.00</div>
+                        <a href="https://s.click.aliexpress.com/e/_c4SdMZ6X" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S110700b0300b4b5096e3f6b98aff87156.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$15.24</div>
+                        <a href="https://s.click.aliexpress.com/e/_c2yw39RZ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S28a47e479bdc46f9ade47afade977d1bM.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$20.21</div>
+                        <a href="https://s.click.aliexpress.com/e/_c336DhyT" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b3a92b80645407abc7e92ad08d2da57i.jpg" alt="Luxury Wall Art Item" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Wall Art Item</h3>
+                        <div class="product-price">$15.38</div>
+                        <a href="https://s.click.aliexpress.com/e/_c34fj7Yj" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
-            </div>
+    <footer>
+        <p>&copy; 2024 StyleVault. All rights reserved.</p>
+        <p>Discover luxury. Embrace elegance.</p>
+        <div class="disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
         </div>
     </footer>
 </body>
