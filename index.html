@@ -3,346 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleVault - Luxury Finds at Unbeatable Prices</title>
-    <meta name="description" content="Discover curated luxury home decor, jewelry, handbags and watches. Premium quality at affordable prices. Free worldwide shipping.">
-    <meta name="keywords" content="luxury home decor, crystal chandelier, gold jewelry set, designer handbag, luxury watches, affordable luxury, home decoration ideas">
-
-    <!-- Open Graph for Pinterest & Social -->
-    <meta property="og:title" content="StyleVault - Luxury Finds at Unbeatable Prices">
-    <meta property="og:description" content="Curated luxury home decor, jewelry & fashion. Premium quality, affordable prices.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-cover.jpg">
-
-    <!-- Pinterest verification -->
-    <meta name="p:domain_verify" content="">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Home | StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: #16213e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #e94560;
+        }
+        
+        .nav-logo span {
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #e94560;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #e94560;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .product-title {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-shop {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-shop:hover {
+            background-color: #d73450;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e94560;
+            text-align: center;
+        }
+        
+        .category-card a {
+            text-decoration: none;
+            display: 100%;
+        }
+        
+        footer {
+            background-color: #16213e;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #e94560;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+        
+        .affiliate-disclosure {
+            background-color: #0f3460;
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .affiliate-disclosure p {
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">&#9670;</span> StyleVault
-            </a>
-            <ul class="nav-links">
-                <li><a href="#categories">Collections</a></li>
-                <li><a href="products/chandeliers.html">Lighting</a></li>
-                <li><a href="products/jewelry.html">Jewelry</a></li>
-                <li><a href="products/handbags.html">Handbags</a></li>
-                <li><a href="products/watches.html">Watches</a></li>
-                <li><a href="products/bedding.html">Bedding</a></li>
-                <li><a href="products/wall-art.html">Wall Art</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
+            <div class="nav-links">
+                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <p class="hero-subtitle">Curated Luxury, Unbeatable Prices</p>
-            <h1>Elevate Your Style<br>Without Breaking the Bank</h1>
-            <p class="hero-text">Handpicked premium home decor, jewelry & fashion finds &mdash; carefully selected for quality, style, and value.</p>
-            <div class="hero-cta">
-                <a href="#categories" class="btn btn-primary">Explore Collections</a>
-                <a href="#trending" class="btn btn-outline">Trending Now</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Trust Bar -->
-    <section class="trust-bar">
-        <div class="container trust-grid">
-            <div class="trust-item">
-                <span class="trust-icon">&#10003;</span>
-                <span>Free Worldwide Shipping</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#9733;</span>
-                <span>Top-Rated Products Only</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#128176;</span>
-                <span>Best Price Guaranteed</span>
-            </div>
-            <div class="trust-item">
-                <span class="trust-icon">&#128274;</span>
-                <span>Buyer Protection</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories" class="categories">
-        <div class="container">
-            <h2 class="section-title">Our Collections</h2>
-            <p class="section-subtitle">Luxury finds, expertly curated for you</p>
-
-            <div class="category-grid">
-                <a href="products/chandeliers.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/S07e8e6c7feef488fb8f0fb6dcf1c2d05v.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Crystal Chandeliers</h3>
-                        <p>Modern luxury lighting for every room</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="products/jewelry.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/S2c7e2e4f01b34e6fbe73d2d4d7c72a1fI.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Gold Jewelry Sets</h3>
-                        <p>Elegant statement pieces for every occasion</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="products/handbags.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/Sb6c3a3d5def94e46bdb2e7e03c6c5e1eP.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Designer-Style Handbags</h3>
-                        <p>Premium bags that turn heads</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="products/watches.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/S09f9f9d95bc041d7b1f3b5f5c5c5b5c5E.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Luxury Watches</h3>
-                        <p>Timeless elegance on your wrist</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="products/bedding.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/S5f5c5e5c5b5c5E5f5c5e5c5b5c5E.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Luxury Bedding</h3>
-                        <p>Sleep in silk & satin luxury</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-
-                <a href="products/wall-art.html" class="category-card">
-                    <div class="category-image" style="background-image: url('https://ae01.alicdn.com/kf/S3c7e2e4f01b34e6fbe73d2d4d7c72a1fI.jpg')"></div>
-                    <div class="category-info">
-                        <h3>Wall Art & Canvas</h3>
-                        <p>Transform your space with stunning art</p>
-                        <span class="category-link">Shop Now &rarr;</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trending Section -->
-    <section id="trending" class="trending">
-        <div class="container">
-            <h2 class="section-title">Trending This Week</h2>
-            <p class="section-subtitle">Our most popular picks, loved by thousands</p>
-
-            <div class="product-grid">
-                <!-- Product 1: Crystal Chandelier -->
-                <article class="product-card">
-                    <div class="product-badge">Best Seller</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S07e8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Modern Luxury Crystal LED Chandelier - Gold Ring Design" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Lighting</span>
-                        <h3>Modern Luxury Crystal LED Chandelier</h3>
-                        <p class="product-desc">Stunning gold ring design with K9 crystals. Perfect for dining rooms & living spaces. Dimmable LED included.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.9 (203 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$104.10</span>
-                            <span class="price-original">$237.17</span>
-                            <span class="price-discount">-56%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c4etASTH" class="btn btn-product" target="_blank" rel="nofollow noopener">View Deal &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 2: Jewelry Set -->
-                <article class="product-card">
-                    <div class="product-badge hot">Hot</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S2c7e2e4f01b34e6fbe73d2d4d7c72a1fI.jpg" alt="Dubai Gold Crystal Jewelry Set - Necklace Earrings Bracelet" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Jewelry</span>
-                        <h3>Dubai Gold Crystal Jewelry Set</h3>
-                        <p class="product-desc">Elegant 4-piece set: necklace, earrings, bracelet & ring. 18K gold plated with premium crystals.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (520 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$89.90</span>
-                            <span class="price-original">$179.80</span>
-                            <span class="price-discount">-50%</span>
-                        </div>
-                        <a href="https://www.aliexpress.com/item/1005009134280960.html" class="btn btn-product" target="_blank" rel="nofollow noopener">View Deal &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 3: Handbag -->
-                <article class="product-card">
-                    <div class="product-badge new">New</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/Sb6c3a3d5def94e46bdb2e7e03c6c5e1eP.jpg" alt="Luxury Leather Crossbody Bag - Designer Style" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Handbags</span>
-                        <h3>Luxury Leather Crossbody Bag</h3>
-                        <p class="product-desc">Premium PU leather with gold hardware. Designer-inspired silhouette. Multiple compartments.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                            <span class="rating-text">4.7 (340 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$79.50</span>
-                            <span class="price-original">$145.00</span>
-                            <span class="price-discount">-45%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c4TiwbmJ" class="btn btn-product" target="_blank" rel="nofollow noopener">View Deal &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 4: Watch -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S09f9f9d95bc041d7b1f3b5f5c5c5b5c5E.jpg" alt="OLEVS Women Luxury Gold Watch - Diamond Dial" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Watches</span>
-                        <h3>OLEVS Luxury Gold Diamond Watch</h3>
-                        <p class="product-desc">Stainless steel with diamond dial. Japanese quartz movement. Water resistant. Gift box included.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.9 (180 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$92.00</span>
-                            <span class="price-original">$185.00</span>
-                            <span class="price-discount">-50%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3PdyzHz" class="btn btn-product" target="_blank" rel="nofollow noopener">View Deal &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="why-us">
-        <div class="container">
-            <h2 class="section-title">Why StyleVault?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="why-icon">&#128269;</div>
-                    <h3>Expertly Curated</h3>
-                    <p>We test and review hundreds of products to bring you only the best. Every item meets our strict quality standards.</p>
+        <div class="hero">
+        <h1>STYLE VAULT</h1>
+        <p>Discover Luxury, Affordable Fashion & Home Decor</p>
+    </div>
+    
+    <div class="container">
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Chandeliers" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Chandeliers'">
+                <div class="category-overlay">
+                    <a href="products/chandeliers.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Chandeliers</div>
+                    </a>
                 </div>
-                <div class="why-item">
-                    <div class="why-icon">&#128184;</div>
-                    <h3>Unbeatable Prices</h3>
-                    <p>Get luxury-quality items at a fraction of retail prices. Same materials, same style &mdash; smarter shopping.</p>
+            </div>
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Jewelry" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Jewelry'">
+                <div class="category-overlay">
+                    <a href="products/jewelry.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Jewelry</div>
+                    </a>
                 </div>
-                <div class="why-item">
-                    <div class="why-icon">&#128666;</div>
-                    <h3>Free Worldwide Shipping</h3>
-                    <p>All our recommended products ship free worldwide. Track your order every step of the way.</p>
+            </div>
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2b0c572a96e04bdf8bbd71b5ba18425eW.jpg" alt="Handbags" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Handbags'">
+                <div class="category-overlay">
+                    <a href="products/handbags.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Handbags</div>
+                    </a>
                 </div>
-                <div class="why-item">
-                    <div class="why-icon">&#128274;</div>
-                    <h3>Buyer Protection</h3>
-                    <p>Every purchase is protected. Full refund if items don't arrive or don't match the description.</p>
+            </div>
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="Watches" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Watches'">
+                <div class="category-overlay">
+                    <a href="products/watches.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Watches</div>
+                    </a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Bedding" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Bedding'">
+                <div class="category-overlay">
+                    <a href="products/bedding.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Bedding</div>
+                    </a>
+                </div>
+            </div>
+            <div class="category-card">
+                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S81bee5e78d4c450586aa0750cd3331ecI.jpg" alt="Wall Art" class="category-image" onerror="this.src='https://via.placeholder.com/280x300?text=Wall Art'">
+                <div class="category-overlay">
+                    <a href="products/wall-art.html" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <div class="category-name">Wall Art</div>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container newsletter-content">
-            <h2>Get Exclusive Deals</h2>
-            <p>Join 10,000+ smart shoppers who get first access to our best finds and exclusive discounts.</p>
-            <form class="newsletter-form" action="#" method="post">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><span class="logo-icon">&#9670;</span> StyleVault</h4>
-                    <p>Your trusted source for curated luxury finds at unbeatable prices. We handpick every item to ensure quality and style.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="products/chandeliers.html">Crystal Chandeliers</a></li>
-                        <li><a href="products/jewelry.html">Gold Jewelry</a></li>
-                        <li><a href="products/handbags.html">Designer Handbags</a></li>
-                        <li><a href="products/watches.html">Luxury Watches</a></li>
-                        <li><a href="products/bedding.html">Luxury Bedding</a></li>
-                        <li><a href="products/wall-art.html">Wall Art</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Buying Guides</a></li>
-                        <li><a href="#">Style Tips</a></li>
-                        <li><a href="#">Home Decor Ideas</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 StyleVault. All rights reserved.</p>
-                <p class="affiliate-disclosure">Affiliate Disclosure: Some links on this site are affiliate links. We may earn a commission at no extra cost to you.</p>
-            </div>
-        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
