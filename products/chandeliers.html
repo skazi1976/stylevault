@@ -1,476 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chandeliers - StyleVault</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, #16213e 0%, #0f1b2e 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 2px solid #e94560;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #e94560;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 10px 20px;
-            background-color: #e94560;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .back-link:hover {
-            background-color: #ff6b7a;
-        }
-
-        .page-title {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #e94560;
-        }
-
-        .page-subtitle {
-            font-size: 1.1em;
-            color: #b0b0b0;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .products-section {
-            padding: 40px 20px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .product-card {
-            background-color: #16213e;
-            border: 1px solid #e94560;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
-            border-color: #ff6b7a;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background-color: #0a0a0a;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-title {
-            font-size: 1em;
-            color: #ffffff;
-            margin-bottom: 10px;
-            min-height: 2.4em;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-
-        .product-price {
-            font-size: 1.4em;
-            color: #e94560;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .shop-btn {
-            display: inline-block;
-            width: 100%;
-            padding: 12px;
-            background-color: #e94560;
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: auto;
-        }
-
-        .shop-btn:hover {
-            background-color: #ff6b7a;
-        }
-
-        footer {
-            background-color: #16213e;
-            border-top: 1px solid #e94560;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        footer p {
-            color: #b0b0b0;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .disclosure {
-            color: #888888;
-            font-size: 0.85em;
-            margin-top: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .page-title {
-                font-size: 1.5em;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .product-image {
-                height: 150px;
-            }
-
-            .product-info {
-                padding: 15px;
-            }
-
-            .product-price {
-                font-size: 1.1em;
-            }
-        }
-    </style>
+    <title>נברשות - StyleVault</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav style="background:#0f1b2e;padding:15px 30px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;">
-        <a href="../index.html" style="text-decoration:none;font-size:1.5em;font-weight:700;color:#fff;"><span style="color:#e94560;">STYLE</span>VAULT</a>
-        <div style="display:flex;gap:20px;flex-wrap:wrap;">
-            <a href="chandeliers.html" style="color:#ccc;text-decoration:none;">Chandeliers</a>
-            <a href="jewelry.html" style="color:#ccc;text-decoration:none;">Jewelry</a>
-            <a href="handbags.html" style="color:#ccc;text-decoration:none;">Handbags</a>
-            <a href="watches.html" style="color:#ccc;text-decoration:none;">Watches</a>
-            <a href="bedding.html" style="color:#ccc;text-decoration:none;">Bedding</a>
-            <a href="wall-art.html" style="color:#ccc;text-decoration:none;">Wall Art</a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo"><span class="logo-icon">✧</span> STYLEVAULT</a>
+            <ul class="nav-links">
+                <li><a href="chandeliers.html">נברשות</a></li>
+                <li><a href="jewelry.html">תכשיטים</a></li>
+                <li><a href="handbags.html">תיקים</a></li>
+                <li><a href="watches.html">שעונים</a></li>
+                <li><a href="bedding.html">מצעים</a></li>
+                <li><a href="wall-art.html">אמנות קיר</a></li>
+            </ul>
         </div>
     </nav>
-    <header>
-        <h1>StyleVault</h1>
-    </header>
 
-    <div class="container">
-        <a href="../index.html" class="back-link">← Back to Home</a>
-        
-        <div class="products-section">
-            <h2 class="page-title">Chandeliers</h2>
-            <p class="page-subtitle">Explore our curated collection of Chandelier</p>
-
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$106.92</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3X0qKEb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdb05d4ed04d148cea4cb4012f7c813cab.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$112.85</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3WK60Nh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8663c7941eab4af781ef280a483196e8F.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$87.37</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3p6GM0J" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Saf5c991ff8654956b2900e87a6248de6I.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$95.74</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3LPv1Zl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2151e2fdc5584137815f7b619a557aeb0.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$60.87</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3MVVL5N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Ufc620b74778043aabc1e2495a0848c926.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$35.06</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4OQNKS7" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc58739a8d35b435bbcc01b18da5638a5J.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$46.62</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3h5LP2r" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S83d7d1031cc94ee097b82951f3ff4939G.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$37.84</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3yokOex" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Saa4f5a43d7154dfc8974e9666bb4f95bw.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$123.06</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3z5Irhl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb1667a93d6774ee0a6432bbe09de46d19.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$51.09</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2vH4OJ9" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3797ec3ae5c3480d92f6603513bf1751E.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$100.04</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3egdN83" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S95db489224ad4c3481284d73e51f83b3g.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$52.10</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4DExMv1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S10345a08a1f24b23b7f5a21b544ad569w.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$95.20</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4EoXqVh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4651e8e71c3b40eeba116b4ec6172865z.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$53.38</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3iLBsyX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3cdd6deb183f4066a036f953bc18490bc.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$38.31</div>
-                        <a href="https://s.click.aliexpress.com/e/_c44d8LAB" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5f986e6c3ed84c90a14444743b468354n.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$73.52</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3CC65iX" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6f03ab7d464d46edaef713efa13d8ab2d.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$82.21</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3YIx2or" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S048558009695453da420db30d1f22eefO.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$129.55</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4q1zl07" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sebfa007864dc4e58a424bc8d18991d24v.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$66.43</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3Nyk3Lh" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S13cb300dc1274c9b940768efe29e9b3d9.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$100.05</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2xlvqQb" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdfb263bde59c4d2cba17c8e7a15b4615o.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$141.01</div>
-                        <a href="https://s.click.aliexpress.com/e/_c4FXmm8B" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sb7d79262e4944bb5b68853ab69a80f7a0.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$84.63</div>
-                        <a href="https://s.click.aliexpress.com/e/_c34DBm3N" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S152293aa5a204743b59a03e1978caa0dy.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$139.23</div>
-                        <a href="https://s.click.aliexpress.com/e/_c45M33GL" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6ddf74bf90d741b489ba2c456c2079b7X.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$37.17</div>
-                        <a href="https://s.click.aliexpress.com/e/_c41MAk5p" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7b13b6ee1e6646129365c12b4179395e8.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$75.97</div>
-                        <a href="https://s.click.aliexpress.com/e/_c40rc2YR" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8c35bbd382e343728cf4640043481ce4T.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$43.90</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3DmqnOJ" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S99608857397245dcba8f62099b36b52as.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$71.42</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3jh8pcx" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc7b2b87e022c44c4ac90f81b7702e9e1I.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$57.19</div>
-                        <a href="https://s.click.aliexpress.com/e/_c3Q8NnJ1" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sdc8d2404455a4de1b7826651bed9a354n.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$96.10</div>
-                        <a href="https://s.click.aliexpress.com/e/_c2y3Vo63" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S59a6b00752bd4c61863845c4cc140346e.jpg" alt="Luxury Chandelier Item" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Luxury Chandelier Item</h3>
-                        <div class="product-price">$89.32</div>
-                        <a href="https://s.click.aliexpress.com/e/_c33bL4Xl" class="shop-btn" target="_blank" rel="noopener">Shop Now</a>
-                    </div>
-                </div>
-            </div>
+    <div class="page-header">
+        <div class="container">
+            <h1>נברשות יוקרה</h1>
+            <p>תאורה שהופכת כל חלל לארמון</p>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 StyleVault. All rights reserved.</p>
-        <p>Discover luxury. Embrace elegance.</p>
-        <div class="disclosure">
-            <p><strong>Affiliate Disclosure:</strong> StyleVault contains affiliate links. When you click on these links and make a purchase, we may earn a commission at no additional cost to you. We only recommend products we believe in. Thank you for supporting our site!</p>
+    <div class="container">
+        <div class="page-breadcrumb">
+            <a href="../index.html">בית</a> / <span>נברשות</span>
+        </div>
+
+        <section class="products-section">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd06f913eefea49de92674c170653ea4aH.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">תאורה</span>
+                        <h3>נברשת קריסטל מלכותית</h3>
+                        <p class="product-desc">עיצוב עוצר נשימה לסלון או לפינת האוכל.</p>
+                        <div class="product-price">
+                            <span class="price-current">$106.92</span>
+                        </div>
+                        <a href="https://s.click.aliexpress.com/e/_c3X0qKEb" class="btn btn-product" target="_blank" rel="noopener">לרכישה עכשיו</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 StyleVault. כל הזכויות שמורות.</p>
+            </div>
         </div>
     </footer>
 </body>
