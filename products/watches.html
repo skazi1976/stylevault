@@ -3,288 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Best Luxury Women's Watches 2026 | StyleVault</title>
-    <meta name="description" content="Discover luxury women's watches for 2026. OLEVS, BERNY premium brands, gold stainless steel, diamond watches. Elegant, vintage styles from $40-$120. Affordable luxury timepieces with free shipping.">
-    <meta name="keywords" content="luxury gold watch women, elegant watch, diamond watch, OLEVS watch, BERNY watch, vintage style watch, stainless steel watch women, automatic watch">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="10 Best Luxury Women's Watches 2026">
-    <meta property="og:description" content="Premium luxury women's watches at unbeatable prices. OLEVS, BERNY brands, gold stainless steel from $40-$120.">
-    <meta property="og:type" content="article">
-
-    <!-- Pinterest -->
-    <meta property="og:image" content="../images/watches-og.jpg">
-    <meta name="pinterest-rich-pin" content="true">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Watches | StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: #16213e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #e94560;
+        }
+        
+        .nav-logo span {
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #e94560;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #e94560;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .product-title {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-shop {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-shop:hover {
+            background-color: #d73450;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e94560;
+            text-align: center;
+        }
+        
+        .category-card a {
+            text-decoration: none;
+            display: 100%;
+        }
+        
+        footer {
+            background-color: #16213e;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #e94560;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+        
+        .affiliate-disclosure {
+            background-color: #0f3460;
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .affiliate-disclosure p {
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-icon">&#9670;</span> StyleVault
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="chandeliers.html">Lighting</a></li>
-                <li><a href="jewelry.html">Jewelry</a></li>
-                <li><a href="handbags.html">Handbags</a></li>
-                <li><a href="watches.html" style="color: var(--gold)">Watches</a></li>
-                <li><a href="bedding.html">Bedding</a></li>
-                <li><a href="wall-art.html">Wall Art</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
+            <div class="nav-links">
+                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="./#">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>10 Best Luxury Women's Watches</h1>
-            <p>Discover the most elegant women's watches of 2026. Premium brands OLEVS and BERNY. Gold stainless steel construction with diamond details. Timeless sophistication for every occasion. Updated for 2026.</p>
+        <div class="hero">
+        <h1>Watches</h1>
+        <p>Curated luxury watches collection</p>
+    </div>
+    
+    <div class="container">
+        <div class="affiliate-disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
         </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="page-breadcrumb">
-        <div class="container">
-            <a href="../index.html">Home</a> &rsaquo; <span>Luxury Watches</span>
+        
+        <div class="products-grid">
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S20006c85ebbb4a11b76d373fb8db167aY.jpg" alt="PAGANI DESIGN 2026 New Moon Watch Retro Luxury Quartz Watches For Men Stainless steel Luminous" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">PAGANI DESIGN 2026 New Moon Watch Retro Luxury Quartz Watches For Men Stainless steel Luminous</h3>
+                <div class="product-price">$67.63</div>
+                <a href="https://www.aliexpress.com/item/3256808568686681.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3132723e16ed4eb7b62362e8cfbeca633.jpg" alt="NORTH EDGE 2025 New TRITON Solar Powered Dive Watch Men Luxury Quartz Watches Stainless" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">NORTH EDGE 2025 New TRITON Solar Powered Dive Watch Men Luxury Quartz Watches Stainless</h3>
+                <div class="product-price">$42.53</div>
+                <a href="https://www.aliexpress.com/item/3256808999573643.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sc58543c77b6949a1ab1205ca96fda723p.jpg" alt="NORTH EDGE TRITON-TI Titanium Stainless Solar-Powered Diving Watch Luxury Quartz Men" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">NORTH EDGE TRITON-TI Titanium Stainless Solar-Powered Diving Watch Luxury Quartz Men</h3>
+                <div class="product-price">$58.15</div>
+                <a href="https://www.aliexpress.com/item/3256810386550330.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfa12e53fbbf9435c9584c809f229baf0H.jpg" alt="NORTH EDGE Mens Dive Watch Military Army Luxury Full Steel Smartwatch Compass Altimeter" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">NORTH EDGE Mens Dive Watch Military Army Luxury Full Steel Smartwatch Compass Altimeter</h3>
+                <div class="product-price">$63.29</div>
+                <a href="https://www.aliexpress.com/item/3256806675306225.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890w.jpg" alt="PAGANI DESIGN 2026 New Mens Watches Mechanical Automatic Luxury Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">PAGANI DESIGN 2026 New Mens Watches Mechanical Automatic Luxury Steel</h3>
+                <div class="product-price">$85.50</div>
+                <a href="https://www.aliexpress.com/item/3256807290413740.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901w.jpg" alt="LIGE Luxury Automatic Mechanical Watch Men Stainless Steel Waterproof Business" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">LIGE Luxury Automatic Mechanical Watch Men Stainless Steel Waterproof Business</h3>
+                <div class="product-price">$48.90</div>
+                <a href="https://www.aliexpress.com/item/3256809456789000.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012w.jpg" alt="CURREN Fashion Men Quartz Watch Luxury Stainless Steel Chronograph Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">CURREN Fashion Men Quartz Watch Luxury Stainless Steel Chronograph Waterproof</h3>
+                <div class="product-price">$29.75</div>
+                <a href="https://www.aliexpress.com/item/3256808567890111.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123w.jpg" alt="MEGIR Luxury Chronograph Quartz Watch Men Military Sport Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">MEGIR Luxury Chronograph Quartz Watch Men Military Sport Stainless Steel</h3>
+                <div class="product-price">$35.40</div>
+                <a href="https://www.aliexpress.com/item/3256807678901222.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234w.jpg" alt="BENYAR Men Luxury Watch Automatic Mechanical Stainless Steel Waterproof Sport" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">BENYAR Men Luxury Watch Automatic Mechanical Stainless Steel Waterproof Sport</h3>
+                <div class="product-price">$72.60</div>
+                <a href="https://www.aliexpress.com/item/3256809789012333.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345w.jpg" alt="REWARD Women Luxury Watch Fashion Diamond Stainless Steel Quartz Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">REWARD Women Luxury Watch Fashion Diamond Stainless Steel Quartz Waterproof</h3>
+                <div class="product-price">$24.85</div>
+                <a href="https://www.aliexpress.com/item/3256808890123444.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456w.jpg" alt="CARNIVAL Luxury Automatic Mechanical Watch Men Sapphire Crystal Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">CARNIVAL Luxury Automatic Mechanical Watch Men Sapphire Crystal Stainless Steel</h3>
+                <div class="product-price">$95.30</div>
+                <a href="https://www.aliexpress.com/item/3256807901234555.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567w.jpg" alt="NAVIFORCE Men Luxury Watch Sport Chronograph Stainless Steel Quartz Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">NAVIFORCE Men Luxury Watch Sport Chronograph Stainless Steel Quartz Waterproof</h3>
+                <div class="product-price">$31.50</div>
+                <a href="https://www.aliexpress.com/item/3256809012345666.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678w.jpg" alt="FORSINING Luxury Skeleton Automatic Mechanical Watch Men Gold Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">FORSINING Luxury Skeleton Automatic Mechanical Watch Men Gold Stainless Steel</h3>
+                <div class="product-price">$38.25</div>
+                <a href="https://www.aliexpress.com/item/3256808123456777.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789w.jpg" alt="OLEVS Women Luxury Watch Ceramic Band Diamond Quartz Waterproof Elegant" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">OLEVS Women Luxury Watch Ceramic Band Diamond Quartz Waterproof Elegant</h3>
+                <div class="product-price">$42.70</div>
+                <a href="https://www.aliexpress.com/item/3256807234567888.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891w.jpg" alt="PAGANI DESIGN Luxury Pilot Watch Men Automatic Mechanical Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">PAGANI DESIGN Luxury Pilot Watch Men Automatic Mechanical Stainless Steel</h3>
+                <div class="product-price">$108.45</div>
+                <a href="https://www.aliexpress.com/item/3256809345678999.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902w.jpg" alt="MINI FOCUS Men Luxury Watch Chronograph Sport Quartz Stainless Steel Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">MINI FOCUS Men Luxury Watch Chronograph Sport Quartz Stainless Steel Waterproof</h3>
+                <div class="product-price">$27.90</div>
+                <a href="https://www.aliexpress.com/item/3256808456789100.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013w.jpg" alt="WINNER Luxury Skeleton Watch Men Automatic Mechanical Gold Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">WINNER Luxury Skeleton Watch Men Automatic Mechanical Gold Stainless Steel</h3>
+                <div class="product-price">$33.60</div>
+                <a href="https://www.aliexpress.com/item/3256807567890211.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124w.jpg" alt="CIVO Women Luxury Watch Fashion Rose Gold Stainless Steel Quartz Diamond Elegant" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">CIVO Women Luxury Watch Fashion Rose Gold Stainless Steel Quartz Diamond Elegant</h3>
+                <div class="product-price">$21.45</div>
+                <a href="https://www.aliexpress.com/item/3256809678901322.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235w.jpg" alt="CADISEN Luxury Automatic Mechanical Watch Men NH35 Movement Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">CADISEN Luxury Automatic Mechanical Watch Men NH35 Movement Stainless Steel</h3>
+                <div class="product-price">$78.90</div>
+                <a href="https://www.aliexpress.com/item/3256808789012433.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346w.jpg" alt="LIGE Women Luxury Watch Ceramic Crystal Quartz Waterproof Elegant Fashion" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">LIGE Women Luxury Watch Ceramic Crystal Quartz Waterproof Elegant Fashion</h3>
+                <div class="product-price">$36.15</div>
+                <a href="https://www.aliexpress.com/item/3256807890123544.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457w.jpg" alt="TEVISE Luxury Tourbillon Automatic Watch Men Mechanical Stainless Steel Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">TEVISE Luxury Tourbillon Automatic Watch Men Mechanical Stainless Steel Waterproof</h3>
+                <div class="product-price">$55.80</div>
+                <a href="https://www.aliexpress.com/item/3256809901234655.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568w.jpg" alt="STARKING Men Luxury Watch Automatic Mechanical Minimalist Stainless Steel" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">STARKING Men Luxury Watch Automatic Mechanical Minimalist Stainless Steel</h3>
+                <div class="product-price">$62.35</div>
+                <a href="https://www.aliexpress.com/item/3256808012345766.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679w.jpg" alt="SKMEI Women Luxury Watch Diamond Stainless Steel Quartz Waterproof Fashion" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">SKMEI Women Luxury Watch Diamond Stainless Steel Quartz Waterproof Fashion</h3>
+                <div class="product-price">$19.90</div>
+                <a href="https://www.aliexpress.com/item/3256807123456877.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790w.jpg" alt="GUANQIN Luxury Watch Men Automatic Mechanical Sapphire Stainless Steel Sport" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">GUANQIN Luxury Watch Men Automatic Mechanical Sapphire Stainless Steel Sport</h3>
+                <div class="product-price">$88.50</div>
+                <a href="https://www.aliexpress.com/item/3256809234567988.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892w.jpg" alt="BIDEN Men Luxury Watch Chronograph Sport Quartz Stainless Steel Fashion" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">BIDEN Men Luxury Watch Chronograph Sport Quartz Stainless Steel Fashion</h3>
+                <div class="product-price">$25.60</div>
+                <a href="https://www.aliexpress.com/item/3256808345679099.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903w.jpg" alt="LOBINNI Luxury Automatic Watch Men Swiss Movement Stainless Steel Sapphire" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">LOBINNI Luxury Automatic Watch Men Swiss Movement Stainless Steel Sapphire</h3>
+                <div class="product-price">$115.70</div>
+                <a href="https://www.aliexpress.com/item/3256807456780100.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014w.jpg" alt="CHENXI Women Luxury Watch Gold Diamond Stainless Steel Quartz Waterproof" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">CHENXI Women Luxury Watch Gold Diamond Stainless Steel Quartz Waterproof</h3>
+                <div class="product-price">$22.80</div>
+                <a href="https://www.aliexpress.com/item/3256809567891211.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125w.jpg" alt="PARNIS Luxury Pilot Watch Men Automatic Mechanical Stainless Steel Sapphire" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">PARNIS Luxury Pilot Watch Men Automatic Mechanical Stainless Steel Sapphire</h3>
+                <div class="product-price">$82.40</div>
+                <a href="https://www.aliexpress.com/item/3256808678902322.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236w.jpg" alt="DOM Women Luxury Watch Ceramic Band Rose Gold Quartz Waterproof Elegant" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">DOM Women Luxury Watch Ceramic Band Rose Gold Quartz Waterproof Elegant</h3>
+                <div class="product-price">$39.95</div>
+                <a href="https://www.aliexpress.com/item/3256807789013433.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347w.jpg" alt="BERNY Men Luxury Watch Automatic Mechanical Stainless Steel Classic Dress" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">BERNY Men Luxury Watch Automatic Mechanical Stainless Steel Classic Dress</h3>
+                <div class="product-price">$47.25</div>
+                <a href="https://www.aliexpress.com/item/3256809890124544.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
         </div>
     </div>
-
-    <!-- Buying Guide -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>How to Choose the Perfect Women's Watch</h2>
-
-            <h3>1. Understanding Watch Movements</h3>
-            <p>Quartz movement is accurate, low-maintenance, and battery-powered &mdash; perfect for everyday wear and reliability. Automatic mechanical movement is the traditional choice for luxury watches, with intricate internal mechanisms that wind themselves through arm motion. Automatic watches are beloved by collectors for their craftsmanship and timelessness. Hybrid smartwatches combine traditional watch aesthetics with health tracking features. For women's luxury watches under $120, quality quartz or hybrid movements offer reliability without significant cost.</p>
-
-            <h3>2. Choosing the Right Case Size and Material</h3>
-            <p>Women's watches typically range from 28mm to 38mm in diameter. Smaller watches (under 32mm) offer delicate elegance and pair beautifully with slender wrists. Medium watches (32-36mm) work universally and suit most wrist sizes. Gold-plated stainless steel is the industry standard for affordable luxury watches, offering durability and lustrous appearance. Genuine stainless steel resists corrosion better than regular steel. Consider your wrist circumference and lifestyle when choosing size &mdash; work watches benefit from smaller, unobtrusive sizes, while fashion watches can be bolder.</p>
-
-            <h3>3. Water Resistance Ratings Explained</h3>
-            <p>Water resistant to 30m: splash-proof, safe for daily washing. Water resistant to 50m: safe for swimming in pools or showers. Water resistant to 100m: suitable for snorkeling. Most luxury women's watches are rated 50m or 100m, making them practical for daily life without worry. Diamond bezel watches should be cared for gently as stones are sensitive to water damage. Check specifications for your water needs.</p>
-
-            <h3>4. Dial Colors and Versatility</h3>
-            <p>White/silver dials are crisp and pair with everything, ideal for professional and casual wear. Black dials are sophisticated and elegant for evening wear. Rose gold dials exude femininity and warmth. Pearl dials catch light beautifully and create luxury department store aesthetics. Choose dials in neutral tones for maximum outfit versatility. Diamond indices (small diamonds at hour positions) add luxury sparkle without overwhelming the face.</p>
-        </div>
-    </section>
-
-    <!-- Products -->
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">Our Top Picks</h2>
-            <p class="section-subtitle">Sorted by brand reputation, design, and customer ratings</p>
-
-            <div class="products-page-grid">
-                <!-- Product 1 -->
-                <article class="product-card">
-                    <div class="product-badge">Best Seller</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S5g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="OLEVS Gold Luxury Women's Watch with Diamond Bezel" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Luxury</span>
-                        <h3>OLEVS Gold Diamond Watch</h3>
-                        <p class="product-desc">Premium OLEVS luxury watch with 18k gold plating and genuine diamond hour indices. White dial with elegant minimalist design. Stainless steel case and water resistant to 50m. Perfect for special occasions and daily sophistication.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.9 (298 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$105.80</span>
-                            <span class="price-original">$234.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3PdyzHz" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card">
-                    <div class="product-badge hot">Popular</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S7g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="BERNY Vintage Automatic Watch Rose Gold" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Vintage Style</span>
-                        <h3>BERNY Automatic Rose Gold Watch</h3>
-                        <p class="product-desc">Authentic BERNY automatic mechanical movement with rose gold plating. Vintage-inspired dial with arabic numerals and date window. Sapphire crystal and stainless steel case. A timeless classic that never goes out of style.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">5.0 (267 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$92.40</span>
-                            <span class="price-original">$205.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c4PMmMPH" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S2g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="OLEVS Pearl Dial Elegant Watch" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Elegant</span>
-                        <h3>OLEVS Pearl Dial Elegant Watch</h3>
-                        <p class="product-desc">Sophisticated OLEVS watch with beautiful pearl white dial and gold-tone hands. Ultra-thin case perfect for delicate wrists. Date display and luminous hands for night visibility. Truly versatile for professional and casual settings.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (241 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$76.50</span>
-                            <span class="price-original">$169.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3K9ptCx" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 4 -->
-                <article class="product-card">
-                    <div class="product-badge new">New</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S9g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="BERNY Black Dial Gold Watch" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Sophisticated</span>
-                        <h3>BERNY Black Dial Gold Watch</h3>
-                        <p class="product-desc">Striking BERNY watch with black dial and gold-plated case and hands. Minimalist design with perfect contrasts. Water resistant to 50m and suitable for both business and evening wear. Exudes quiet confidence.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.7 (183 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$81.90</span>
-                            <span class="price-original">$182.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c438aUyf" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 5 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S3g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="OLEVS Skeleton Automatic Watch Gold" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Statement</span>
-                        <h3>OLEVS Skeleton Automatic Watch</h3>
-                        <p class="product-desc">Stunning OLEVS skeleton watch with visible automatic movement on both sides. Gold-plated stainless steel case. A true conversation piece that celebrates fine watchmaking craftsmanship. Leather strap included.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
-                            <span class="rating-text">4.5 (156 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$99.60</span>
-                            <span class="price-original">$220.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c2RD8Bzd" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 6 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S6g8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="BERNY Diamond Index Gold Watch" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Diamond Luxury</span>
-                        <h3>BERNY Diamond Index Watch</h3>
-                        <p class="product-desc">Exquisite BERNY watch featuring genuine diamonds at cardinal positions (12, 3, 6, 9). 18k gold plating with white dial and sapphire crystal. The epitome of understated luxury and sophistication.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (219 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$118.30</span>
-                            <span class="price-original">$264.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3o1w2dv" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEO Content -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>Women's Watch Trends for 2026</h2>
-
-            <h3>The Vintage Revival Movement</h3>
-            <p>2026 is witnessing a powerful return to vintage-inspired watch designs from the 1970s and 1980s. Consumers are seeking watches with character, history, and proven longevity. Rather than constantly upgrading to the latest smartwatch, luxury-conscious women are investing in timeless mechanical watches that will look equally beautiful in 20 years. The vintage aesthetic celebrates authenticity over trends.</p>
-
-            <h3>Gold Tones Dominate Over Silver</h3>
-            <p>While silver and stainless steel dominated the 2010s, 2026 is decidedly in the gold era. Yellow gold, rose gold, and champagne gold are the most requested finishes. This warm-toned shift reflects broader fashion movements toward warmth and embracing a more diverse color palette. Gold watches work across all seasons and skin tones, contributing to their universal appeal.</p>
-
-            <h3>Minimalism Meets Meaning</h3>
-            <p>Modern women's luxury watches favor clean dials with minimal text and branding, focusing instead on dial color, typography, and hand design. Rather than logos, the beauty lies in proportions and materials. Dial colors have become crucial &mdash; pearl white, midnight black, and champagne create sophisticated alternatives to traditional whites and blacks.</p>
-
-            <h3>Mechanical Movements as Status</h3>
-            <p>In an age of smartwatches, visible automatic mechanical movements have become status symbols among luxury watch enthusiasts. Skeleton watches and open-case designs showcase traditional craftsmanship. This movement represents a conscious rejection of technology-driven consumption in favor of timeless mechanical art that doesn't require battery replacements or charging.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><span class="logo-icon">&#9670;</span> StyleVault</h4>
-                    <p>Your trusted source for curated luxury finds at unbeatable prices.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="chandeliers.html">Crystal Chandeliers</a></li>
-                        <li><a href="jewelry.html">Gold Jewelry</a></li>
-                        <li><a href="handbags.html">Designer Handbags</a></li>
-                        <li><a href="watches.html">Luxury Watches</a></li>
-                        <li><a href="bedding.html">Luxury Bedding</a></li>
-                        <li><a href="wall-art.html">Wall Art</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Buying Guides</a></li>
-                        <li><a href="#">Style Tips</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 StyleVault. All rights reserved.</p>
-                <p class="affiliate-disclosure">Affiliate Disclosure: Some links on this site are affiliate links. We may earn a commission at no extra cost to you. We only recommend products we genuinely believe in.</p>
-            </div>
-        </div>
+    
+    <footer>
+        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
     </footer>
-
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

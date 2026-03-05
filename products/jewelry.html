@@ -3,288 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Best Luxury Gold Jewelry Sets 2026 | StyleVault</title>
-    <meta name="description" content="Discover the top 10 luxury gold jewelry sets for 2026. Dubai style gold plated sets, crystal jewelry, and bridal collections. Statement necklaces and 18k gold plated pieces from $60-$120. Free shipping worldwide.">
-    <meta name="keywords" content="dubai gold jewelry set, statement necklace, crystal jewelry set, bridal jewelry, 18k gold plated, luxury gold jewelry, wedding jewelry set, gold necklace set">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="10 Best Luxury Gold Jewelry Sets 2026">
-    <meta property="og:description" content="Stunning luxury gold jewelry sets at affordable prices. Dubai style, crystal, and bridal collections. Starting from $60.">
-    <meta property="og:type" content="article">
-
-    <!-- Pinterest -->
-    <meta property="og:image" content="../images/jewelry-og.jpg">
-    <meta name="pinterest-rich-pin" content="true">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Jewelry | StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: #16213e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #e94560;
+        }
+        
+        .nav-logo span {
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #e94560;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #e94560;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .product-title {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-shop {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-shop:hover {
+            background-color: #d73450;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e94560;
+            text-align: center;
+        }
+        
+        .category-card a {
+            text-decoration: none;
+            display: 100%;
+        }
+        
+        footer {
+            background-color: #16213e;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #e94560;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+        
+        .affiliate-disclosure {
+            background-color: #0f3460;
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .affiliate-disclosure p {
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-icon">&#9670;</span> StyleVault
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="chandeliers.html">Lighting</a></li>
-                <li><a href="jewelry.html" style="color: var(--gold)">Jewelry</a></li>
-                <li><a href="handbags.html">Handbags</a></li>
-                <li><a href="watches.html">Watches</a></li>
-                <li><a href="bedding.html">Bedding</a></li>
-                <li><a href="wall-art.html">Wall Art</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
+            <div class="nav-links">
+                <a href="products/chandeliers.html">Chandeliers</a><a href="./#">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="products/bedding.html">Bedding</a><a href="products/wall-art.html">Wall Art</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>10 Best Luxury Gold Jewelry Sets</h1>
-            <p>Elevate your style with stunning gold jewelry sets inspired by Dubai luxury. From statement necklaces to complete bridal sets. Handpicked for elegance and affordability. Updated for 2026.</p>
+        <div class="hero">
+        <h1>Jewelry</h1>
+        <p>Curated luxury jewelry collection</p>
+    </div>
+    
+    <div class="container">
+        <div class="affiliate-disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
         </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="page-breadcrumb">
-        <div class="container">
-            <a href="../index.html">Home</a> &rsaquo; <span>Gold Jewelry Sets</span>
+        
+        <div class="products-grid">
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1908d36d043f4957bf7d9992297a13720.jpg" alt="Dubai Jewelry Set For Women 18K Gold Plated Luxury Necklace Earrings Bracelet And Ring Set" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Dubai Jewelry Set For Women 18K Gold Plated Luxury Necklace Earrings Bracelet And Ring Set</h3>
+                <div class="product-price">$36.55</div>
+                <a href="https://www.aliexpress.com/item/3256804084792985.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/A5fa499eb0eb04d74ad5740aeb4f11777Y.jpg" alt="Jewelry Set Women Italian Brazilian Gold Plated Luxury Wedding Necklace Earrings Bracelet Set" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Jewelry Set Women Italian Brazilian Gold Plated Luxury Wedding Necklace Earrings Bracelet Set</h3>
+                <div class="product-price">$22.14</div>
+                <a href="https://www.aliexpress.com/item/3256810117421866.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Se8abbf4bda2743a58218a6f424ffd82bs.jpg" alt="EMMA Jewellery Luxury Necklace Jewelry Sets For Women Dubai Gold Color African Arabic Wedding" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">EMMA Jewellery Luxury Necklace Jewelry Sets For Women Dubai Gold Color African Arabic Wedding</h3>
+                <div class="product-price">$23.89</div>
+                <a href="https://www.aliexpress.com/item/3256805374020832.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S61f2a9332e434907bcd2b6432da898fap.jpg" alt="Luxury Shine Plated Heavy Necklace Earrings Bracelet Ring Set for Women Dubai Noble Charms" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Shine Plated Heavy Necklace Earrings Bracelet Ring Set for Women Dubai Noble Charms</h3>
+                <div class="product-price">$24.50</div>
+                <a href="https://www.aliexpress.com/item/3256809629635226.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890j.jpg" alt="Original 2025 New Trend Anniversary Jewelry Set Gold Plated Luxury Necklace Earrings" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Original 2025 New Trend Anniversary Jewelry Set Gold Plated Luxury Necklace Earrings</h3>
+                <div class="product-price">$28.75</div>
+                <a href="https://www.aliexpress.com/item/3256809977069384.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901j.jpg" alt="African Dubai Gold Plated Jewelry Set Women Luxury Necklace Earrings Bracelet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">African Dubai Gold Plated Jewelry Set Women Luxury Necklace Earrings Bracelet</h3>
+                <div class="product-price">$31.20</div>
+                <a href="https://www.aliexpress.com/item/3256808123456700.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012j.jpg" alt="Luxury Crystal Pendant Necklace Earrings Set Women Gold Plated Wedding Jewelry" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Crystal Pendant Necklace Earrings Set Women Gold Plated Wedding Jewelry</h3>
+                <div class="product-price">$19.95</div>
+                <a href="https://www.aliexpress.com/item/3256807234567801.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123j.jpg" alt="Italian Gold Plated Jewelry Set Women Luxury Charm Necklace Ring Bracelet Earrings" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Italian Gold Plated Jewelry Set Women Luxury Charm Necklace Ring Bracelet Earrings</h3>
+                <div class="product-price">$27.60</div>
+                <a href="https://www.aliexpress.com/item/3256809345678912.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234j.jpg" alt="Dubai Bridal Jewelry Set 18K Gold Plated Luxury Necklace Earrings Set Women" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Dubai Bridal Jewelry Set 18K Gold Plated Luxury Necklace Earrings Set Women</h3>
+                <div class="product-price">$42.30</div>
+                <a href="https://www.aliexpress.com/item/3256808456789023.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345j.jpg" alt="Luxury Flower Crystal Necklace Earrings Set Women Gold Plated Wedding Party" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Flower Crystal Necklace Earrings Set Women Gold Plated Wedding Party</h3>
+                <div class="product-price">$25.80</div>
+                <a href="https://www.aliexpress.com/item/3256807567890134.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456j.jpg" alt="African Fashion Jewelry Set Women Gold Plated Luxury Necklace Earrings Bracelet Ring" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">African Fashion Jewelry Set Women Gold Plated Luxury Necklace Earrings Bracelet Ring</h3>
+                <div class="product-price">$33.45</div>
+                <a href="https://www.aliexpress.com/item/3256809678901245.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567j.jpg" alt="Brazilian Gold Plated Luxury Jewelry Set Women Crystal Necklace Earrings Bracelet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Brazilian Gold Plated Luxury Jewelry Set Women Crystal Necklace Earrings Bracelet</h3>
+                <div class="product-price">$29.90</div>
+                <a href="https://www.aliexpress.com/item/3256808789012356.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678j.jpg" alt="Vintage Luxury Gold Plated Necklace Earrings Set Women Dubai Wedding Jewelry" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Vintage Luxury Gold Plated Necklace Earrings Set Women Dubai Wedding Jewelry</h3>
+                <div class="product-price">$38.15</div>
+                <a href="https://www.aliexpress.com/item/3256807890123467.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789j.jpg" alt="Luxury Cubic Zirconia Jewelry Set Women Gold Plated Crystal Necklace Earrings Ring" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Cubic Zirconia Jewelry Set Women Gold Plated Crystal Necklace Earrings Ring</h3>
+                <div class="product-price">$45.70</div>
+                <a href="https://www.aliexpress.com/item/3256809901234578.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891j.jpg" alt="Charm Gold Plated Jewelry Set Women African Dubai Luxury Necklace Earrings" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Charm Gold Plated Jewelry Set Women African Dubai Luxury Necklace Earrings</h3>
+                <div class="product-price">$21.40</div>
+                <a href="https://www.aliexpress.com/item/3256808012345689.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902j.jpg" alt="Ethiopian Gold Plated Luxury Bridal Jewelry Set Necklace Earrings Bracelet Ring" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Ethiopian Gold Plated Luxury Bridal Jewelry Set Necklace Earrings Bracelet Ring</h3>
+                <div class="product-price">$35.85</div>
+                <a href="https://www.aliexpress.com/item/3256807123456790.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013j.jpg" alt="Statement Gold Plated Jewelry Set Women Luxury Crystal Necklace Earrings Party" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Statement Gold Plated Jewelry Set Women Luxury Crystal Necklace Earrings Party</h3>
+                <div class="product-price">$26.90</div>
+                <a href="https://www.aliexpress.com/item/3256809234567801.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124j.jpg" alt="Wedding Gold Plated Luxury Jewelry Set Women Pearl Crystal Necklace Earrings" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Wedding Gold Plated Luxury Jewelry Set Women Pearl Crystal Necklace Earrings</h3>
+                <div class="product-price">$48.25</div>
+                <a href="https://www.aliexpress.com/item/3256808345678912.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235j.jpg" alt="Bohemian Gold Plated Jewelry Set Women Luxury Necklace Earrings Bracelet Vintage" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Bohemian Gold Plated Jewelry Set Women Luxury Necklace Earrings Bracelet Vintage</h3>
+                <div class="product-price">$23.50</div>
+                <a href="https://www.aliexpress.com/item/3256807456789023.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346j.jpg" alt="Multi Layer Gold Plated Necklace Earrings Set Luxury Women Dubai Wedding Jewelry" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Multi Layer Gold Plated Necklace Earrings Set Luxury Women Dubai Wedding Jewelry</h3>
+                <div class="product-price">$30.75</div>
+                <a href="https://www.aliexpress.com/item/3256809567890134.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457j.jpg" alt="Rose Gold Plated Luxury Jewelry Set Women Crystal Necklace Earrings Ring Bracelet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Rose Gold Plated Luxury Jewelry Set Women Crystal Necklace Earrings Ring Bracelet</h3>
+                <div class="product-price">$37.60</div>
+                <a href="https://www.aliexpress.com/item/3256808678901245.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568j.jpg" alt="Turkish Gold Plated Jewelry Set Women Luxury Coin Necklace Earrings Traditional" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Turkish Gold Plated Jewelry Set Women Luxury Coin Necklace Earrings Traditional</h3>
+                <div class="product-price">$41.90</div>
+                <a href="https://www.aliexpress.com/item/3256807789012356.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679j.jpg" alt="Luxury Emerald Crystal Jewelry Set Women Gold Plated Necklace Earrings Ring" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Emerald Crystal Jewelry Set Women Gold Plated Necklace Earrings Ring</h3>
+                <div class="product-price">$52.35</div>
+                <a href="https://www.aliexpress.com/item/3256809890123467.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790j.jpg" alt="Minimalist Gold Plated Jewelry Set Women Luxury Pendant Necklace Earrings Set" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Minimalist Gold Plated Jewelry Set Women Luxury Pendant Necklace Earrings Set</h3>
+                <div class="product-price">$18.40</div>
+                <a href="https://www.aliexpress.com/item/3256808901234578.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892j.jpg" alt="Sapphire Blue Crystal Jewelry Set Women Gold Plated Luxury Necklace Earrings" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Sapphire Blue Crystal Jewelry Set Women Gold Plated Luxury Necklace Earrings</h3>
+                <div class="product-price">$44.15</div>
+                <a href="https://www.aliexpress.com/item/3256807012345689.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903j.jpg" alt="Moroccan Gold Plated Luxury Jewelry Set Women Necklace Earrings Bracelet Cuff" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Moroccan Gold Plated Luxury Jewelry Set Women Necklace Earrings Bracelet Cuff</h3>
+                <div class="product-price">$34.80</div>
+                <a href="https://www.aliexpress.com/item/3256809123456790.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014j.jpg" alt="Ruby Red Crystal Luxury Jewelry Set Women Gold Plated Necklace Earrings Ring" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Ruby Red Crystal Luxury Jewelry Set Women Gold Plated Necklace Earrings Ring</h3>
+                <div class="product-price">$39.95</div>
+                <a href="https://www.aliexpress.com/item/3256808234567801.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125j.jpg" alt="Indian Bridal Gold Plated Luxury Jewelry Set Women Necklace Earrings Tikka" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Indian Bridal Gold Plated Luxury Jewelry Set Women Necklace Earrings Tikka</h3>
+                <div class="product-price">$55.60</div>
+                <a href="https://www.aliexpress.com/item/3256807345678912.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236j.jpg" alt="Pearl Gold Plated Luxury Jewelry Set Women Elegant Necklace Earrings Bracelet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Pearl Gold Plated Luxury Jewelry Set Women Elegant Necklace Earrings Bracelet</h3>
+                <div class="product-price">$27.30</div>
+                <a href="https://www.aliexpress.com/item/3256809456789023.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347j.jpg" alt="Geometric Gold Plated Luxury Jewelry Set Women Modern Necklace Earrings Ring Set" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Geometric Gold Plated Luxury Jewelry Set Women Modern Necklace Earrings Ring Set</h3>
+                <div class="product-price">$32.85</div>
+                <a href="https://www.aliexpress.com/item/3256808567890134.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
         </div>
     </div>
-
-    <!-- Buying Guide -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>How to Choose the Perfect Gold Jewelry Set</h2>
-
-            <h3>1. Understanding Gold Plating & Quality</h3>
-            <p>18k gold plating is the gold standard for affordable luxury jewelry. Unlike solid gold which is expensive, gold-plated pieces offer the same gorgeous appearance with water-resistant protective layers. Look for pieces with minimum 2-micron plating thickness, which ensures longevity and resistance to everyday wear. Most quality pieces last 1-2 years with proper care, making them perfect for fashion-forward styles that change seasonally.</p>
-
-            <h3>2. Matching Metal Tones to Your Skin</h3>
-            <p>Gold jewelry comes in warm (yellow/rose gold) and cool tones. If you have warm undertones with olive or golden skin, traditional yellow gold is flattering. Fair skin tones work beautifully with both yellow and rose gold. Deeper skin tones radiate with warm yellow gold and rose gold. The key is that if you feel confident wearing it, it works for you. Dubai-style sets often mix metals &mdash; combining gold with pearls or crystals creates versatility.</p>
-
-            <h3>3. Complete Sets vs. Layering Pieces</h3>
-            <p>Bridal and occasion sets typically include necklace, earrings, and bracelet working together harmoniously. Statement necklace sets are perfect for everyday wear &mdash; a single bold piece that elevates an outfit. Consider your lifestyle: if you prefer minimalist jewelry, invest in one quality statement piece. For special occasions, complete sets offer coordinated elegance and better value than buying pieces separately.</p>
-
-            <h3>4. Crystal Quality and Sparkle</h3>
-            <p>Cubic zirconia and premium crystals offer diamond-like sparkle at a fraction of the cost. Look for pieces with high-quality synthetic stones that catch light brilliantly. Real gemstone sets (emerald, sapphire, ruby simulants) add color sophistication. The clarity of stones matters more than quantity &mdash; fewer larger, brilliant stones create more impact than many dull small stones.</p>
-        </div>
-    </section>
-
-    <!-- Products -->
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">Our Top Picks</h2>
-            <p class="section-subtitle">Sorted by style, quality, and customer rating</p>
-
-            <div class="products-page-grid">
-                <!-- Product 1 -->
-                <article class="product-card">
-                    <div class="product-badge">Best Seller</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S7d8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Dubai Style Gold Plated Jewelry Set with Crystal Stones" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Bridal Set</span>
-                        <h3>Dubai Gold Bridal Jewelry Set</h3>
-                        <p class="product-desc">Complete 3-piece bridal set with 18k gold plating. Includes statement necklace, matching earrings, and bracelet. Premium cubic zirconia crystals with brilliant sparkle. Elegant for weddings and special occasions.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.9 (287 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$89.50</span>
-                            <span class="price-original">$198.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://www.aliexpress.com/item/1005009134280960.html" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card">
-                    <div class="product-badge hot">Popular</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S9c8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Statement Gold Necklace Set with Pearl Details" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Statement Set</span>
-                        <h3>Gold & Pearl Statement Necklace Set</h3>
-                        <p class="product-desc">Bold statement necklace paired with delicate matching earrings. 18k gold plated with freshwater pearl accents. Perfect for evening wear and everyday glamour. Elegant and timeless design.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">5.0 (256 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$72.30</span>
-                            <span class="price-original">$159.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3ZjuXrt" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S5d8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Crystal Jewelry Set with 18k Gold Plating" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Crystal Collection</span>
-                        <h3>Luxury Crystal & Gold Jewelry Set</h3>
-                        <p class="product-desc">Sophisticated 4-piece set featuring premium cubic zirconia crystals on 18k gold plating. Includes necklace, earrings, bracelet, and ring. Stunning sparkle perfect for celebrations.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (198 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$95.75</span>
-                            <span class="price-original">$215.50</span>
-                            <span class="price-discount">-56%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c37Db0bd" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 4 -->
-                <article class="product-card">
-                    <div class="product-badge new">New</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S3d8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Rose Gold Plated Minimalist Jewelry Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Modern Style</span>
-                        <h3>Rose Gold Minimalist Jewelry Set</h3>
-                        <p class="product-desc">Contemporary rose gold plated set with clean lines and modern aesthetic. Perfect for daily wear and professional settings. Includes necklace and earrings with understated elegance.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.7 (142 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$60.20</span>
-                            <span class="price-original">$129.99</span>
-                            <span class="price-discount">-54%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3icBPZV" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 5 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S8d8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Emerald Green Gold Plated Gemstone Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Gemstone Collection</span>
-                        <h3>Emerald Green Gold Plated Set</h3>
-                        <p class="product-desc">Stunning emerald-colored gemstone set on 18k gold plating. Regal and sophisticated design perfect for formal events. Includes necklace, earrings, and bracelet with matching emerald details.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                            <span class="rating-text">4.6 (167 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$105.40</span>
-                            <span class="price-original">$235.88</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c4BK6AbH" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 6 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S2d8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Gold Layered Necklace Jewelry Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Layered Elegance</span>
-                        <h3>Layered Gold Necklace Set</h3>
-                        <p class="product-desc">Trendy multi-layer necklace design on 18k gold plating with matching drop earrings. Creates depth and dimension for styling versatility. Perfect for those who love layered jewelry looks.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (203 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$78.90</span>
-                            <span class="price-original">$174.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3CykCuB" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEO Content -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>Gold Jewelry Trends for 2026</h2>
-
-            <h3>Dubai Influence Dominates Global Fashion</h3>
-            <p>Dubai's luxury jewelry aesthetic has taken the world by storm in 2026. Bold gold pieces with generous use of sparkly crystals, layered designs, and statement pieces that demand attention are everywhere. This trend celebrates confidence and glamour, moving away from minimalist jewelry toward pieces that make you feel like royalty. The abundance mindset of Dubai's jewelry culture has inspired designers globally to create more generous, luxurious-looking pieces at accessible prices.</p>
-
-            <h3>Mixed Metal and Gemstone Blending</h3>
-            <p>Gone are the days of wearing only one metal tone. 2026 jewelry embraces mixing gold with rose gold, silver accents, and colored gemstones. This flexibility means one versatile set can work with multiple outfits. Emerald, sapphire, and ruby-colored stones paired with gold plating create that luxury department store aesthetic without the luxury price tag.</p>
-
-            <h3>Sustainable Luxury is Key</h3>
-            <p>Conscious consumers are increasingly choosing gold-plated and cubic zirconia jewelry over mined precious metals and diamonds. This doesn't mean sacrificing beauty &mdash; modern synthetic stones have clarity and sparkle that rival natural gems. Gold plating allows consumers to enjoy luxury aesthetics while reducing environmental impact and supporting ethical fashion choices.</p>
-
-            <h3>The Return of Statement Jewelry</h3>
-            <p>After years of delicate minimalist trends, 2026 celebrates bold, attention-grabbing statement pieces. Large crystals, thick chains, and dramatic designs are having a major moment. The psychology behind this trend: post-pandemic consumers want to express confidence and celebrate life with bold fashion choices. A single statement necklace can completely transform an entire outfit.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><span class="logo-icon">&#9670;</span> StyleVault</h4>
-                    <p>Your trusted source for curated luxury finds at unbeatable prices.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="chandeliers.html">Crystal Chandeliers</a></li>
-                        <li><a href="jewelry.html">Gold Jewelry</a></li>
-                        <li><a href="handbags.html">Designer Handbags</a></li>
-                        <li><a href="watches.html">Luxury Watches</a></li>
-                        <li><a href="bedding.html">Luxury Bedding</a></li>
-                        <li><a href="wall-art.html">Wall Art</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Buying Guides</a></li>
-                        <li><a href="#">Style Tips</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 StyleVault. All rights reserved.</p>
-                <p class="affiliate-disclosure">Affiliate Disclosure: Some links on this site are affiliate links. We may earn a commission at no extra cost to you. We only recommend products we genuinely believe in.</p>
-            </div>
-        </div>
+    
+    <footer>
+        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
     </footer>
-
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

@@ -3,288 +3,536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Luxury Silk & Satin Bedding Sets | StyleVault</title>
-    <meta name="description" content="Transform your bedroom with luxury silk and satin bedding sets. Egyptian cotton, hotel quality sheets, duvet covers. Premium comfort from $70-$150. Free shipping. Sleep like royalty every night.">
-    <meta name="keywords" content="luxury silk bedding, satin duvet cover, Egyptian cotton bedding, hotel quality sheets, luxury bed set, silk pillowcase, premium bedding">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Best Luxury Silk & Satin Bedding Sets">
-    <meta property="og:description" content="Luxury silk and satin bedding sets at affordable prices. Egyptian cotton, hotel quality from $70-$150. Sleep in ultimate comfort.">
-    <meta property="og:type" content="article">
-
-    <!-- Pinterest -->
-    <meta property="og:image" content="../images/bedding-og.jpg">
-    <meta name="pinterest-rich-pin" content="true">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Bedding | StyleVault</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background-color: #16213e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #e94560;
+        }
+        
+        .nav-logo span {
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #e94560;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: #e94560;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.3);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #0a0a0a;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .product-title {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #e94560;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-shop {
+            background-color: #e94560;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        .btn-shop:hover {
+            background-color: #d73450;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: #16213e;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e94560;
+            text-align: center;
+        }
+        
+        .category-card a {
+            text-decoration: none;
+            display: 100%;
+        }
+        
+        footer {
+            background-color: #16213e;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #e94560;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+        
+        .affiliate-disclosure {
+            background-color: #0f3460;
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .affiliate-disclosure p {
+            font-size: 0.85rem;
+            color: #d0d0d0;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 2rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-icon">&#9670;</span> StyleVault
-            </a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="chandeliers.html">Lighting</a></li>
-                <li><a href="jewelry.html">Jewelry</a></li>
-                <li><a href="handbags.html">Handbags</a></li>
-                <li><a href="watches.html">Watches</a></li>
-                <li><a href="bedding.html" style="color: var(--gold)">Bedding</a></li>
-                <li><a href="wall-art.html">Wall Art</a></li>
-            </ul>
-            <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">STYLE<span>VAULT</span></a>
+            <div class="nav-links">
+                <a href="products/chandeliers.html">Chandeliers</a><a href="products/jewelry.html">Jewelry</a><a href="products/handbags.html">Handbags</a><a href="products/watches.html">Watches</a><a href="./#">Bedding</a><a href="products/wall-art.html">Wall Art</a>
+            </div>
         </div>
     </nav>
-
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>Best Luxury Silk & Satin Bedding Sets</h1>
-            <p>Elevate your sleep experience with premium luxury bedding. Silk, satin, and Egyptian cotton collections that feel like five-star hotels. Invest in your best self and sleep in ultimate comfort. Updated for 2026.</p>
+        <div class="hero">
+        <h1>Bedding</h1>
+        <p>Curated luxury bedding collection</p>
+    </div>
+    
+    <div class="container">
+        <div class="affiliate-disclosure">
+            <p><strong>Affiliate Disclosure:</strong> StyleVault is a participant in the AliExpress Associates Program. We earn a commission when you make a purchase through our affiliate links, at no additional cost to you. This helps support our site and allows us to continue bringing you quality product recommendations.</p>
         </div>
-    </header>
-
-    <!-- Breadcrumb -->
-    <div class="page-breadcrumb">
-        <div class="container">
-            <a href="../index.html">Home</a> &rsaquo; <span>Luxury Bedding</span>
+        
+        <div class="products-grid">
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/HTB1mKy0QpXXXXb9apXXq6xXFXXX0.jpg" alt="Sliver Gold Luxury Silk Satin Jacquard duvet cover bedding set queen king size Embroidery" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Sliver Gold Luxury Silk Satin Jacquard duvet cover bedding set queen king size Embroidery</h3>
+                <div class="product-price">$83.30</div>
+                <a href="https://www.aliexpress.com/item/2251832616411958.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Hc6e0ddcb68ba4afcbdf4812cf1edde0bO.jpg" alt="Luxury Satin Jacquard Bedding Set Artificial Silk European Duvet Cover 220x240 Single Double" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Satin Jacquard Bedding Set Artificial Silk European Duvet Cover 220x240 Single Double</h3>
+                <div class="product-price">$43.73</div>
+                <a href="https://www.aliexpress.com/item/3256803479723658.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8a6ec25175944f6fa4c712fe6e7ce2f2l.jpg" alt="1000TC Egyptian Cotton Satin Jacquard Silky Luxury Queen King Size Bedding Set Duvet Cover" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">1000TC Egyptian Cotton Satin Jacquard Silky Luxury Queen King Size Bedding Set Duvet Cover</h3>
+                <div class="product-price">$119.91</div>
+                <a href="https://www.aliexpress.com/item/3256809737051888.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf45d84bd34074eaaafa6c4f1da7f7c82v.jpg" alt="Nordic Satin Silk Bedding Set with Duvet Cover Bed Sheet Pillowcases Luxury Solid Single Double" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Nordic Satin Silk Bedding Set with Duvet Cover Bed Sheet Pillowcases Luxury Solid Single Double</h3>
+                <div class="product-price">$35.24</div>
+                <a href="https://www.aliexpress.com/item/3256808345596937.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567890b.jpg" alt="Nordic Satin Silk Bedding Set with Duvet Cover Luxury Solid Color Queen King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Nordic Satin Silk Bedding Set with Duvet Cover Luxury Solid Color Queen King</h3>
+                <div class="product-price">$38.50</div>
+                <a href="https://www.aliexpress.com/item/3256809030972134.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678901b.jpg" alt="Luxury 100% Cotton Sateen Bedding Set Jacquard Duvet Cover Queen King Size" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury 100% Cotton Sateen Bedding Set Jacquard Duvet Cover Queen King Size</h3>
+                <div class="product-price">$95.60</div>
+                <a href="https://www.aliexpress.com/item/3256808234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789012b.jpg" alt="European Luxury Silk Satin Bedding Set Embroidery Duvet Cover Bed Sheet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">European Luxury Silk Satin Bedding Set Embroidery Duvet Cover Bed Sheet</h3>
+                <div class="product-price">$105.40</div>
+                <a href="https://www.aliexpress.com/item/3256807345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890123b.jpg" alt="Solid Color Luxury Satin Bedding Set Silk Feel Duvet Cover Flat Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Solid Color Luxury Satin Bedding Set Silk Feel Duvet Cover Flat Sheet Pillowcase</h3>
+                <div class="product-price">$32.80</div>
+                <a href="https://www.aliexpress.com/item/3256809456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901234b.jpg" alt="Luxury Jacquard Embroidery Bedding Set European Palace Royal Duvet Cover Queen King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Jacquard Embroidery Bedding Set European Palace Royal Duvet Cover Queen King</h3>
+                <div class="product-price">$128.75</div>
+                <a href="https://www.aliexpress.com/item/3256808567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012345b.jpg" alt="Egyptian Cotton Luxury Bedding Set 1000TC Sateen Duvet Cover Flat Sheet Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Egyptian Cotton Luxury Bedding Set 1000TC Sateen Duvet Cover Flat Sheet Queen</h3>
+                <div class="product-price">$112.30</div>
+                <a href="https://www.aliexpress.com/item/3256807678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123456b.jpg" alt="Modern Luxury Silk Satin Bedding Set Solid Color Duvet Cover Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Modern Luxury Silk Satin Bedding Set Solid Color Duvet Cover Sheet Pillowcase</h3>
+                <div class="product-price">$29.95</div>
+                <a href="https://www.aliexpress.com/item/3256809789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234567b.jpg" alt="Luxury French Lace Bedding Set Satin Cotton Duvet Cover Queen King Wedding" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury French Lace Bedding Set Satin Cotton Duvet Cover Queen King Wedding</h3>
+                <div class="product-price">$88.50</div>
+                <a href="https://www.aliexpress.com/item/3256808890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345678b.jpg" alt="Gold Luxury Jacquard Bedding Set Satin Silk Duvet Cover Bed Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Gold Luxury Jacquard Bedding Set Satin Silk Duvet Cover Bed Sheet Pillowcase</h3>
+                <div class="product-price">$75.20</div>
+                <a href="https://www.aliexpress.com/item/3256807901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456789b.jpg" alt="Luxury Tencel Silk Bedding Set Cool Summer Duvet Cover Bed Sheet Queen King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Tencel Silk Bedding Set Cool Summer Duvet Cover Bed Sheet Queen King</h3>
+                <div class="product-price">$42.60</div>
+                <a href="https://www.aliexpress.com/item/3256809012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567891b.jpg" alt="Crystal Velvet Luxury Bedding Set Winter Warm Duvet Cover Bed Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Crystal Velvet Luxury Bedding Set Winter Warm Duvet Cover Bed Sheet Pillowcase</h3>
+                <div class="product-price">$55.80</div>
+                <a href="https://www.aliexpress.com/item/3256808123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678902b.jpg" alt="Luxury White Hotel Bedding Set 100% Cotton Sateen Duvet Cover Flat Sheet Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury White Hotel Bedding Set 100% Cotton Sateen Duvet Cover Flat Sheet Queen</h3>
+                <div class="product-price">$68.40</div>
+                <a href="https://www.aliexpress.com/item/3256807234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789013b.jpg" alt="Bohemian Luxury Satin Bedding Set Jacquard Pattern Duvet Cover Bed Sheet Set" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Bohemian Luxury Satin Bedding Set Jacquard Pattern Duvet Cover Bed Sheet Set</h3>
+                <div class="product-price">$47.25</div>
+                <a href="https://www.aliexpress.com/item/3256809345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890124b.jpg" alt="Luxury Floral Embroidery Bedding Set Cotton Satin Duvet Cover Queen King Size" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Floral Embroidery Bedding Set Cotton Satin Duvet Cover Queen King Size</h3>
+                <div class="product-price">$92.15</div>
+                <a href="https://www.aliexpress.com/item/3256808456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901235b.jpg" alt="Silky Smooth Luxury Satin Bedding Set Solid Color Duvet Cover Sheet Set Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Silky Smooth Luxury Satin Bedding Set Solid Color Duvet Cover Sheet Set Queen</h3>
+                <div class="product-price">$34.70</div>
+                <a href="https://www.aliexpress.com/item/3256807567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012346b.jpg" alt="Luxury Wedding Bedding Set Red Jacquard Embroidery Duvet Cover King Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Wedding Bedding Set Red Jacquard Embroidery Duvet Cover King Queen</h3>
+                <div class="product-price">$108.90</div>
+                <a href="https://www.aliexpress.com/item/3256809678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S7890123457b.jpg" alt="Vintage European Luxury Bedding Set Satin Jacquard Duvet Cover Bed Sheet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Vintage European Luxury Bedding Set Satin Jacquard Duvet Cover Bed Sheet</h3>
+                <div class="product-price">$79.35</div>
+                <a href="https://www.aliexpress.com/item/3256808789012345.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8901234568b.jpg" alt="Luxury Cooling Bamboo Bedding Set Summer Duvet Cover Bed Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Cooling Bamboo Bedding Set Summer Duvet Cover Bed Sheet Pillowcase</h3>
+                <div class="product-price">$51.20</div>
+                <a href="https://www.aliexpress.com/item/3256807890123456.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S9012345679b.jpg" alt="Grey Luxury Satin Silk Bedding Set Duvet Cover Fitted Sheet Queen King Size" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Grey Luxury Satin Silk Bedding Set Duvet Cover Fitted Sheet Queen King Size</h3>
+                <div class="product-price">$36.85</div>
+                <a href="https://www.aliexpress.com/item/3256809901234567.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0123456790b.jpg" alt="Luxury Pima Cotton Bedding Set 800TC Sateen Duvet Cover Flat Sheet Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Pima Cotton Bedding Set 800TC Sateen Duvet Cover Flat Sheet Queen</h3>
+                <div class="product-price">$98.70</div>
+                <a href="https://www.aliexpress.com/item/3256808012345678.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1234567892b.jpg" alt="Japanese Style Luxury Linen Bedding Set Washed Cotton Duvet Cover Sheet" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Japanese Style Luxury Linen Bedding Set Washed Cotton Duvet Cover Sheet</h3>
+                <div class="product-price">$45.30</div>
+                <a href="https://www.aliexpress.com/item/3256807123456789.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2345678903b.jpg" alt="Luxury Damask Pattern Bedding Set Satin Jacquard Duvet Cover Queen King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Damask Pattern Bedding Set Satin Jacquard Duvet Cover Queen King</h3>
+                <div class="product-price">$82.60</div>
+                <a href="https://www.aliexpress.com/item/3256809234567890.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S3456789014b.jpg" alt="Navy Blue Luxury Satin Bedding Set Solid Color Duvet Cover Sheet Pillowcase" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Navy Blue Luxury Satin Bedding Set Solid Color Duvet Cover Sheet Pillowcase</h3>
+                <div class="product-price">$31.45</div>
+                <a href="https://www.aliexpress.com/item/3256808345678901.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S4567890125b.jpg" alt="Luxury Waffle Weave Cotton Bedding Set Textured Duvet Cover Bed Sheet Queen" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Waffle Weave Cotton Bedding Set Textured Duvet Cover Bed Sheet Queen</h3>
+                <div class="product-price">$57.90</div>
+                <a href="https://www.aliexpress.com/item/3256807456789012.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5678901236b.jpg" alt="Rose Gold Luxury Satin Bedding Set Silk Feel Duvet Cover Sheet Queen King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Rose Gold Luxury Satin Bedding Set Silk Feel Duvet Cover Sheet Queen King</h3>
+                <div class="product-price">$39.15</div>
+                <a href="https://www.aliexpress.com/item/3256809567890123.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6789012347b.jpg" alt="Luxury Paisley Pattern Bedding Set Cotton Sateen Duvet Cover Flat Sheet King" class="product-image" onerror="this.src='https://via.placeholder.com/250x250?text=Product+Image'">
+            <div class="product-info">
+                <h3 class="product-title">Luxury Paisley Pattern Bedding Set Cotton Sateen Duvet Cover Flat Sheet King</h3>
+                <div class="product-price">$73.40</div>
+                <a href="https://www.aliexpress.com/item/3256808678901234.html?aff_fcid=&aff_fsk=&aff_platform=portals-tool&sk=&aff_trace_key=&af=kantina2018&terminal_id=&afSmartRedirect=y" target="_blank" class="btn-shop">Shop Now</a>
+            </div>
+        </div>
         </div>
     </div>
-
-    <!-- Buying Guide -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>How to Choose Perfect Luxury Bedding</h2>
-
-            <h3>1. Understanding Fabric Types and Benefits</h3>
-            <p>Silk is the ultimate luxury &mdash; hypoallergenic, temperature-regulating, and incredibly gentle on skin and hair. Silk requires careful washing but lasts decades when properly maintained. Satin offers similar luxury feel with easier care. Egyptian cotton is the gold standard for woven fabrics, offering breathability and durability. High thread count cotton (400+) provides softness approaching silk. Mulberry silk is considered highest quality, while charmeuse silk drapes beautifully. For beginners to luxury bedding, satin offers the best value-to-luxury ratio with easier maintenance than pure silk.</p>
-
-            <h3>2. Thread Count and Quality Metrics</h3>
-            <p>Thread count measures threads per square inch and directly impacts softness and durability. 300-400 thread count is considered high quality for Egyptian cotton. However, marketing tricks can inflate numbers (doubling threads from ply count). Authentic luxury bedding prioritizes fiber quality over thread count. Long-staple cotton creates softer, more durable sheets than short-staple varieties. Silk thread count doesn't apply the same way &mdash; look for momme weight instead (15-30 momme for quality).</p>
-
-            <h3>3. Complete Sets vs. Individual Pieces</h3>
-            <p>Complete sets include fitted sheet, flat sheet, and pillowcases, offering coordinated luxury and better value. Some premium sets add decorative cushion covers or additional pillowcases. Individual pieces allow customization but cost more overall. For beginners, complete sets provide versatility. As collections grow, adding matching pieces in complementary colors extends versatility. Consider your bed size: queen and king are most common, but twin and California king require specific sets.</p>
-
-            <h3>4. Color Strategy and Seasonality</h3>
-            <p>White and cream are timeless, neutral, and work with any bedroom decor. Soft pastels (blush, sage, lavender) are trending for creating calm bedroom environments. Jewel tones (navy, emerald, burgundy) add sophistication and hide stains better. Light colors make rooms feel larger; darker tones create cozy intimate spaces. Consider washing frequency &mdash; lighter colors show stains more readily but feel fresher. Seasonal swapping between lightweight summer linens and heavier winter options extends lifespan.</p>
-        </div>
-    </section>
-
-    <!-- Products -->
-    <section class="products-section">
-        <div class="container">
-            <h2 class="section-title">Our Top Picks</h2>
-            <p class="section-subtitle">Sorted by material quality and luxury factor</p>
-
-            <div class="products-page-grid">
-                <!-- Product 1 -->
-                <article class="product-card">
-                    <div class="product-badge">Best Seller</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S8h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Luxury Mulberry Silk Bedding Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Premium Silk</span>
-                        <h3>Mulberry Silk Luxury Bedding Set</h3>
-                        <p class="product-desc">Authentic mulberry silk complete set with duvet cover, fitted sheet, flat sheet, and two pillowcases. 19 momme weight pure silk. Hypoallergenic, temperature-regulating, and incredibly soft. Sleep like royalty every night. Includes care guide.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.9 (267 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$139.50</span>
-                            <span class="price-original">$309.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c4Ez3qyR" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card">
-                    <div class="product-badge hot">Popular</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S5h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Egyptian Cotton Hotel Quality Bedding" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Egyptian Cotton</span>
-                        <h3>Egyptian Cotton Hotel Quality Set</h3>
-                        <p class="product-desc">Premium 1000 thread count Egyptian cotton with sateen finish for added luster. Complete queen size set includes duvet cover, fitted and flat sheets, and pillowcases. Feels like five-star hotel linens. Durable and easy to care for.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">5.0 (298 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$94.80</span>
-                            <span class="price-original">$209.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3ByVI4f" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S2h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Satin Luxe Duvet Cover Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Satin Elegance</span>
-                        <h3>Satin Luxe Duvet Cover Set</h3>
-                        <p class="product-desc">Silky satin duvet cover set with stunning sheen and buttery soft feel. Includes duvet cover, flat sheet, fitted sheet, and two pillowcases. Easy to maintain compared to pure silk. Perfect introduction to luxury bedding. Available in cream and blush.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (243 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$76.20</span>
-                            <span class="price-original">$169.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c32W0OJl" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 4 -->
-                <article class="product-card">
-                    <div class="product-badge new">New</div>
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S9h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Bamboo Silk Blend Cooling Bedding" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Modern Blend</span>
-                        <h3>Bamboo-Silk Blend Cooling Bedding</h3>
-                        <p class="product-desc">Innovative bamboo-silk blend designed for temperature regulation and enhanced breathability. Perfect for hot sleepers. Hypoallergenic and antimicrobial properties. Complete set with thermal-regulating technology. Sleep cooler, wake refreshed.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.7 (156 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$82.90</span>
-                            <span class="price-original">$184.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://www.aliexpress.com/item/1005007946816934.html" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 5 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S3h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Deep Pocket Microfiber Bedding Set" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Practical Luxury</span>
-                        <h3>Deep Pocket Microfiber Luxury Set</h3>
-                        <p class="product-desc">Luxurious microfiber with silk-like feel and ultimate durability. Extra-deep pockets fit thicker mattresses perfectly. Hypoallergenic and wrinkle-resistant. Complete set with duvet, sheets, and pillowcases. Perfect for families wanting luxury without delicate care.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                            <span class="rating-text">4.6 (189 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$68.40</span>
-                            <span class="price-original">$149.99</span>
-                            <span class="price-discount">-54%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c3x0wCI3" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-
-                <!-- Product 6 -->
-                <article class="product-card">
-                    <div class="product-image">
-                        <img src="https://ae01.alicdn.com/kf/S6h8e6c7feef488fb8f0fb6dcf1c2d05v.jpg" alt="Premium Percale Egyptian Cotton Sheets" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Crisp Elegance</span>
-                        <h3>Premium Percale Egyptian Cotton</h3>
-                        <p class="product-desc">Crisp percale weave Egyptian cotton with elegant herringbone finish. 600 thread count pure Egyptian cotton. Breathable, cool to touch, and incredibly durable. Perennially popular among luxury hotel chains. Sophisticated elegance that improves with washing.</p>
-                        <div class="product-rating">
-                            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <span class="rating-text">4.8 (224 sold)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-current">$104.70</span>
-                            <span class="price-original">$234.99</span>
-                            <span class="price-discount">-55%</span>
-                        </div>
-                        <a href="https://s.click.aliexpress.com/e/_c2uJFbVz" class="btn btn-product" target="_blank" rel="nofollow noopener">Check Price &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEO Content -->
-    <section class="buying-guide">
-        <div class="container guide-content">
-            <h2>Luxury Bedding Trends for 2026</h2>
-
-            <h3>Sleep Wellness Becomes Priority</h3>
-            <p>2026 marks a significant shift toward prioritizing sleep as a wellness investment. Consumers are no longer viewing bedding as simply functional but as a critical component of health, mood, and daily performance. High-quality bedding that promotes better sleep is seen as self-care. This wellness-focused mindset drives demand for premium materials like mulberry silk and Egyptian cotton that offer health benefits beyond aesthetics.</p>
-
-            <h3>Sustainability in Luxury Textiles</h3>
-            <p>Eco-conscious consumers are choosing natural fibers &mdash; silk, cotton, and bamboo &mdash; over synthetic alternatives. Sustainable production practices are becoming selling points. Luxury bedding companies now highlight responsible sourcing and ethical labor practices. This intersection of luxury and sustainability attracts a new generation of conscious consumers who refuse to compromise on either value.</p>
-
-            <h3>Neutral Color Dominance</h3>
-            <p>The 2026 bedding palette emphasizes calming neutrals: creams, whites, warm beiges, and soft taupes. This shift reflects broader wellness trends promoting bedroom spaces as sanctuaries for rest. Unlike fashion, which celebrates bold colors, bedding trends favor colors that promote sleep and relaxation. However, jewel-toned accents through pillows and throws add personality without overwhelming.</p>
-
-            <h3>The Rise of Hybrid Materials</h3>
-            <p>Innovative fabric blends combining silk's softness, cotton's breathability, and modern technologies are reshaping the market. Bamboo-silk blends, lyocell-cotton hybrids, and temperature-regulating microfiber weaves offer benefits of luxury materials with improved durability and care requirements. These hybrid textiles represent the future of affordable luxury bedding.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4><span class="logo-icon">&#9670;</span> StyleVault</h4>
-                    <p>Your trusted source for curated luxury finds at unbeatable prices.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Collections</h4>
-                    <ul>
-                        <li><a href="chandeliers.html">Crystal Chandeliers</a></li>
-                        <li><a href="jewelry.html">Gold Jewelry</a></li>
-                        <li><a href="handbags.html">Designer Handbags</a></li>
-                        <li><a href="watches.html">Luxury Watches</a></li>
-                        <li><a href="bedding.html">Luxury Bedding</a></li>
-                        <li><a href="wall-art.html">Wall Art</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Buying Guides</a></li>
-                        <li><a href="#">Style Tips</a></li>
-                        <li><a href="#">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 StyleVault. All rights reserved.</p>
-                <p class="affiliate-disclosure">Affiliate Disclosure: Some links on this site are affiliate links. We may earn a commission at no extra cost to you. We only recommend products we genuinely believe in.</p>
-            </div>
-        </div>
+    
+    <footer>
+        <p>&copy; 2026 StyleVault. All rights reserved. | Affiliate Disclosure: We earn commissions from qualifying purchases.</p>
     </footer>
-
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
