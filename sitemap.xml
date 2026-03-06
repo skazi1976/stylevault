@@ -44,7 +44,7 @@
     <lastmod>2026-03-06</lastmod>
     <priority>0.8</priority>
   </url>
-  <!-- Article Pages -->
+  <!-- Articles -->
   <url>
     <loc>https://skazi1976.github.io/stylevault/articles/chandelier-guide.html</loc>
     <changefreq>monthly</changefreq>
@@ -81,65 +81,120 @@
     <lastmod>2026-03-06</lastmod>
     <priority>0.7</priority>
   </url>
-  <!-- New SEO Articles -->
+  <!-- Additional Articles -->
   <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/best-crystal-chandeliers-dining-room.html</loc>
+    <loc>https://skazi1976.github.io/stylevault/articles/best-crystal-chandeliers-dining-rooms.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/luxury-chandeliers-under-150.html</loc>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://skazi1976.github.io/stylevault/articles/modern-gold-chandeliers.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/statement-chandeliers-living-room.html</loc>
+    <loc>https://skazi1976.github.io/stylevault/articles/statement-chandeliers-living-rooms.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://skazi1976.github.io/stylevault/articles/affordable-pendant-lights.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/designer-jewelry-under-30.html</loc>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/luxury-statement-necklaces.html</loc>
-    <changefreq>monthly</changefreq>
-    <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://skazi1976.github.io/stylevault/articles/elegant-gold-bracelets.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://skazi1976.github.io/stylevault/articles/affordable-earrings-everyday.html</loc>
+    <loc>https://skazi1976.github.io/stylevault/articles/luxury-statement-necklaces.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/designer-jewelry-under-30.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/affordable-earrings-everyday-style.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://skazi1976.github.io/stylevault/articles/best-fashion-rings.html</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2026-03-06</lastmod>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <!-- New Articles: Handbags, Watches, Bedding, Wall Art -->
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/designer-crossbody-bags.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/luxury-tote-bags-under-50.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/best-evening-clutches.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/best-automatic-watches-under-100.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/affordable-womens-watches.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/luxury-dress-watches-men.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/luxury-bedding-sets-under-100.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/best-silk-duvet-covers.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/modern-abstract-wall-art.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://skazi1976.github.io/stylevault/articles/affordable-canvas-prints.html</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-06</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
